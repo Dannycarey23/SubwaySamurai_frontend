@@ -89,7 +89,7 @@ const MainContainer = () => {
                 <Route path='/home' element={<HomePage character={character} updatePlayer={updatePlayer}/>}/>
                 <Route path='/platform1' element={<Platform1 character = {character}/>}/>
                 <Route path='/room1' element={<Room1 KelvinBridgeZombie={KelvinBridgeZombie} character={character} updateRoomOneStatus={updateRoomOneStatus}/>}/>
-                <Route path='/platform22' element={<Platform2 character = {character}/>}/>
+                <Route path='/platform2' element={<Platform2 character = {character}/>}/>
                 <Route path='/room2' element={<Room2 KelvinBridgeZombie={KelvinBridgeZombie} character={character} updateRoomTwoStatus={updateRoomTwoStatus}/>}/>
                 <Route path='/platform3' element={<Platform3 character = {character}/>}/>
                 <Route path='/room3' element={<Room3 KelvinBridgeZombie={KelvinBridgeZombie} character={character} updateRoomThreeStatus={updateRoomThreeStatus}/>}/>

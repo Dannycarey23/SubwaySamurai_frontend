@@ -5,20 +5,22 @@
     transition: 0.1s;
 }
 
-#zombieSprite {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: 0.1s;
-}
-
-#zombieButton{
+.zombieDiv{
     position: absolute;
     bottom: 0;
     right: 0;
 }
 
+/* #zombieButton{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+} */
+
 body{
-    background-image: url('../../public/assets/BB.png');
+    background-image: url('../../public/assets/BridgeV3Moody.png');
     background-repeat: no-repeat;
+    
+    background-size: cover;
+    /* background-size: 100% 100% 100% 100%; */
 }

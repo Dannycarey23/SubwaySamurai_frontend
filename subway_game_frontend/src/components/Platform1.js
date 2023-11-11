@@ -29,7 +29,7 @@ const Platform1 = ({character}) => {
 
       useEffect(() => {
         let newPage = '/room1'
-        if (x >= window.innerWidth){
+        if (x >= window.innerWidth - 450){
             Navigate(newPage)
       }}, [x])
 
@@ -37,6 +37,9 @@ const Platform1 = ({character}) => {
         <>
           <h1>{name}</h1>
           <img src = "assets/KendokaV2.png" height= "500px" id = "Sprite" style={{ marginLeft: `${x}px` }}></img>
+          <div className="zombieDiv"> 
+            <img src = "assets/ZOMBIE.png" height= "300px"/>
+          </div>
         </>
     );
 }

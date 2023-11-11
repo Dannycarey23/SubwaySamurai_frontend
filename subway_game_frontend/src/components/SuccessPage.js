@@ -9,7 +9,7 @@ const SuccessPage = ({character, completedRoomOne, completedRoomTwo}) => {
         if (completedRoomOne == true){
             Navigate('/platform2')
         } else if (completedRoomTwo == true){
-            Navigate('platform3')
+            Navigate('/platform3')
         }
         else {
             Navigate('/platform1')

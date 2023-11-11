@@ -28,7 +28,7 @@ const Platform3 = ({character}) => {
       }, []);
 
       useEffect(() => {
-        let newPage = '/room1'
+        let newPage = '/room3'
         if (x >= window.innerWidth){
             Navigate(newPage)
       }}, [x])

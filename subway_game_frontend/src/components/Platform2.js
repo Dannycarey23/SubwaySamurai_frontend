@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { Navigate, redirect, useNavigate } from 'react-router-dom';
-import '../components/Platform2.css';
+// import characterOne from 'assets/characterOne.png';
+// import '../components/Platform2.css';
   
 
 const Platform2 = ({character}) => {
@@ -28,15 +29,17 @@ const Platform2 = ({character}) => {
       }, []);
 
       useEffect(() => {
-        let newPage = '/room1'
+        let newPage = '/room2'
         if (x >= window.innerWidth){
             Navigate(newPage)
       }}, [x])
 
       return ( 
         <>
-          <h1>{name}</h1>
-          <img src = "assets/KendokaV2.png" height= "500px" id = "Sprite" style={{ marginLeft: `${x}px` }}></img>
+           <h1>{name}</h1>
+          <img src = "assets/KendokaV2.png" height= "500px" id = "Sprite" style={{ marginLeft: `${x}px` }}></img> 
+
+          
         </>
     );
 }
