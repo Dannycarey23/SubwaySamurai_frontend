@@ -35,8 +35,8 @@ const Platform1 = ({character}) => {
 
       return ( 
         <>
-        <h1>{name}</h1>
-        <img src = "assets/KendokaV2.png" height= "500px" id = "Sprite" style={{ marginLeft: `${x}px` }}></img>
+          <h1>{name}</h1>
+          <img src = "assets/KendokaV2.png" height= "500px" id = "Sprite" style={{ marginLeft: `${x}px` }}></img>
         </>
     );
 }

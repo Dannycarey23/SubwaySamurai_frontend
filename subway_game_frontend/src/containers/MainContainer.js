@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from '../components/HomePage';
+import SuccessPage from '../components/SuccessPage';
+import FailurePage from '../components/FailurePage';
 import Platform1 from '../components/Platform1';
 import Room1 from '../components/Room1';
 import { Navigate } from 'react-router-dom';
@@ -13,7 +15,20 @@ const roomsUrl = "/rooms";
 const MainContainer = () => {
     const [enemies, setEnemies] = useState([]);
     const [player, setPlayer] = useState([]);
-    const [rooms, setRooms] = useState([]);    
+    const [rooms, setRooms] = useState([]);  
+    
+    //levelChecks
+    const [completedRoomOne, setCompletedRoomOne] = useState(false);
+    const [completedRoomTwo, setCompletedRoomTwo] = useState(false);
+
+    const updateRoomOneStatus = () => {
+        setCompletedRoomOne(true);
+    }
+
+    const updateRoomTwoStatus = () => {
+        setCompletedRoomTwo(true);
+    }
+
 
     useEffect(()=>{
         fetch(playerUrl)
@@ -65,7 +80,9 @@ const MainContainer = () => {
             <Routes>
                 <Route path='/home' element={<HomePage character={character} updatePlayer={updatePlayer}/>}/>
                 <Route path='/platform1' element={<Platform1 character = {character}/>}/>
-                <Route path='/room1' element={<Room1 KelvinBridgeZombie={KelvinBridgeZombie} character={character}/>}/>
+                <Route path='/room1' element={<Room1 KelvinBridgeZombie={KelvinBridgeZombie} character={character} updateRoomOneStatus={updateRoomOneStatus}/>}/>
+                <Route path='/success' element={<SuccessPage character={character} completedRoomOne={completedRoomOne}/>}/>
+                <Route path='/failure' element={<FailurePage character={character}/>}/>
                 {/* <Route path='/home' element={<HomePage/>}/>
                 <Route path='/home' element={<HomePage/>}/> */}
 

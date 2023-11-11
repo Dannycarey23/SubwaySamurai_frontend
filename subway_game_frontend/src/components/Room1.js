@@ -2,17 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../components/Room1.css';
 
-const Room1 = ({ KelvinBridgeZombie, character }) => {
+const Room1 = ({ KelvinBridgeZombie, character, updateRoomOneStatus }) => {
   const [zombieHP, setZombieHP] = useState(KelvinBridgeZombie.health);
   const [characterHP, setCharacterHP] = useState(character.health);
   const [isCharacterAttacked, setIsCharacterAttacked] = useState(false); //good idea
 
   const Navigate = useNavigate()
-
-  const changePage = () => {
-      let newPage = '/platform1'
-      Navigate(newPage)
-  }
 
   const handleAttackClick = () => {
     setTimeout(() => {
@@ -35,6 +30,15 @@ const Room1 = ({ KelvinBridgeZombie, character }) => {
 
     handleZombieAttack();
   }, [isCharacterAttacked, zombieHP, characterHP, KelvinBridgeZombie.attackPoints]);
+
+  useEffect(() =>{
+    if(zombieHP === 0 || zombieHP < 0){
+      Navigate('/success');
+      updateRoomOneStatus(); //real url
+    } else if (characterHP === 0 || characterHP < 0 ){
+      Navigate('/failure') //real url
+    }
+  })
 
 
     return ( 
