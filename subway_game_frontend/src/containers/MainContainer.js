@@ -6,7 +6,10 @@ import FailurePage from '../components/FailurePage';
 import Platform1 from '../components/Platform1';
 import Room1 from '../components/Room1';
 import { Navigate } from 'react-router-dom';
-
+import Room2 from '../components/Room2';
+import Platform2 from '../components/Platform2';
+import Platform3 from '../components/Platform3';
+import Room3 from '../components/Room3';
 
 const playerUrl = "/players";
 const enemiesUrl = "/enemies";
@@ -20,6 +23,7 @@ const MainContainer = () => {
     //levelChecks
     const [completedRoomOne, setCompletedRoomOne] = useState(false);
     const [completedRoomTwo, setCompletedRoomTwo] = useState(false);
+    const [completedRoomThree, setCompletedRoomThree] = useState(false);
 
     const updateRoomOneStatus = () => {
         setCompletedRoomOne(true);
@@ -27,6 +31,10 @@ const MainContainer = () => {
 
     const updateRoomTwoStatus = () => {
         setCompletedRoomTwo(true);
+    }
+
+    const updateRoomThreeStatus = () => {
+        setCompletedRoomThree(true);
     }
 
 
@@ -81,7 +89,12 @@ const MainContainer = () => {
                 <Route path='/home' element={<HomePage character={character} updatePlayer={updatePlayer}/>}/>
                 <Route path='/platform1' element={<Platform1 character = {character}/>}/>
                 <Route path='/room1' element={<Room1 KelvinBridgeZombie={KelvinBridgeZombie} character={character} updateRoomOneStatus={updateRoomOneStatus}/>}/>
-                <Route path='/success' element={<SuccessPage character={character} completedRoomOne={completedRoomOne}/>}/>
+                <Route path='/platform22' element={<Platform2 character = {character}/>}/>
+                <Route path='/room2' element={<Room2 KelvinBridgeZombie={KelvinBridgeZombie} character={character} updateRoomTwoStatus={updateRoomTwoStatus}/>}/>
+                <Route path='/platform3' element={<Platform3 character = {character}/>}/>
+                <Route path='/room3' element={<Room3 KelvinBridgeZombie={KelvinBridgeZombie} character={character} updateRoomThreeStatus={updateRoomThreeStatus}/>}/>
+
+                <Route path='/success' element={<SuccessPage character={character} completedRoomOne={completedRoomOne} completedRoomTwo={completedRoomTwo} />}/>
                 <Route path='/failure' element={<FailurePage character={character}/>}/>
                 {/* <Route path='/home' element={<HomePage/>}/>
                 <Route path='/home' element={<HomePage/>}/> */}

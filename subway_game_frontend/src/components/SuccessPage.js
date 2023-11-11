@@ -1,14 +1,17 @@
 import React, {useState} from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 
-const SuccessPage = ({character, completedRoomOne}) => {
+const SuccessPage = ({character, completedRoomOne, completedRoomTwo}) => {
 
     const Navigate = useNavigate();
 
     const handleClickEvent = () => {
         if (completedRoomOne == true){
             Navigate('/platform2')
-        } else {
+        } else if (completedRoomTwo == true){
+            Navigate('platform3')
+        }
+        else {
             Navigate('/platform1')
         }
     }

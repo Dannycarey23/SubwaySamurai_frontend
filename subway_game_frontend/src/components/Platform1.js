@@ -42,6 +42,3 @@ const Platform1 = ({character}) => {
 }
  
 export default Platform1;
-
-
-//Jen was here
