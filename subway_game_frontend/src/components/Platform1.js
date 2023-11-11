@@ -35,11 +35,13 @@ const Platform1 = ({character}) => {
 
       return ( 
         <>
+        <div id="platformOneBackround">
           <h1>{name}</h1>
           <img src = "assets/KendokaV2.png" height= "500px" id = "Sprite" style={{ marginLeft: `${x}px` }}></img>
           <div className="zombieDiv"> 
             <img src = "assets/ZOMBIE.png" height= "300px"/>
           </div>
+        </div>
         </>
     );
 }

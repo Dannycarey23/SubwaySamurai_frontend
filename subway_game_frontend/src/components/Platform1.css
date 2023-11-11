@@ -20,7 +20,5 @@
 body{
     background-image: url('../../public/assets/BridgeV3Moody.png');
     background-repeat: no-repeat;
-    
     background-size: cover;
-    /* background-size: 100% 100% 100% 100%; */
 }
