@@ -11,7 +11,7 @@ const Room1 = ({ KelvinBridgeZombie, character, updateRoomOneStatus }) => {
 
   const handleAttackClick = () => {
     setTimeout(() => {
-      const randomAttackPoints = Math.floor(Math.random() * 10) + 1; 
+      const randomAttackPoints = Math.floor(Math.random() * 10) + 1; // returns 0-9
       const newZombieHP = zombieHP - randomAttackPoints;
       setZombieHP(newZombieHP);
       setIsCharacterAttacked(true); // Signal that character attack is completed
@@ -30,7 +30,7 @@ const Room1 = ({ KelvinBridgeZombie, character, updateRoomOneStatus }) => {
     const handleZombieAttack = () => {
       if (isCharacterAttacked && zombieHP > 0) {
         setTimeout(() => {
-          const randomZombieAttackPoints = Math.floor(Math.random() * 20) + 1;
+          const randomZombieAttackPoints = Math.floor(Math.random() * 20) + 1; // returns 0-19
           const newCharacterHP = characterHP - randomZombieAttackPoints;
           setCharacterHP(newCharacterHP);
           setIsCharacterAttacked(false); 
