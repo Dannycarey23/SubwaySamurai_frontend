@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import { Navigate, redirect, useNavigate } from "react-router-dom";
+import MusicButton from "./MusicButton";
 
-const HomePage = ({character, updatePlayer}) => {
+const HomePage = ({character, updatePlayer, music, soundOn, soundOff}) => {
 
     const [player, setPlayer] = useState(character)
 
@@ -29,23 +30,25 @@ const HomePage = ({character, updatePlayer}) => {
         })
     }
 
+
     
     return (
         <div>
-        <form onSubmit={handleSubmit}>
-        <h2>Set Player Name</h2>
-        <label htmlFor='name'>Player Name</label>
-        <input 
-        type='text'
-        id='name'
-        defaultValue={player.name}
-        required
-        onChange={handleNameChange}
-        />
-        <button type="submit" name="submit" value="Update" onClick={handleSubmit}/>
-        </form>
+            <MusicButton music={music} soundOff={soundOff} soundOn={soundOn}/>
+            <form onSubmit={handleSubmit}>
+                <h2>Set Player Name</h2>
+                <label htmlFor='name'>Player Name</label>
+                <input 
+                    type='text'
+                    id='name'
+                    defaultValue={player.name}
+                    required
+                    onChange={handleNameChange}
+                />
+                <button type="submit" name="submit" value="Update" onClick={handleSubmit}>Save</button>
+            </form>
 
-        <button onClick={changePage}>Start Game</button>
+            <button onClick={changePage}>Start Game</button>
         </div> 
      );
 }

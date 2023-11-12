@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import { Navigate, redirect, useNavigate } from 'react-router-dom';
 import '../components/Platform1.css';
+import MusicButton from "./MusicButton";
   
 
-const Platform1 = ({character}) => {
+const Platform1 = ({character, music}) => {
     
     const [name, setName] = useState(character.name)
     const [x, setX] = useState(0);
@@ -31,11 +32,13 @@ const Platform1 = ({character}) => {
         let newPage = '/room1'
         if (x >= window.innerWidth - 450){
             Navigate(newPage)
+            music.stop()
       }}, [x])
 
       return ( 
         <>
         <div id="platformOneBackround">
+          <MusicButton music={music}/>
           <h1>{name}</h1>
           <img src = "assets/KendokaV2.png" height= "500px" id = "Sprite" style={{ marginLeft: `${x}px` }}></img>
           <div className="zombieDiv"> 

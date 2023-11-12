@@ -1,15 +1,19 @@
 import React, {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Howl } from "howler";
+import { Navigate } from 'react-router-dom';
+
 import HomePage from '../components/HomePage';
 import SuccessPage from '../components/SuccessPage';
 import FailurePage from '../components/FailurePage';
-import Platform1 from '../components/Platform1';
 import Room1 from '../components/Room1';
-import { Navigate } from 'react-router-dom';
 import Room2 from '../components/Room2';
+import Room3 from '../components/Room3';
+import Platform1 from '../components/Platform1';
 import Platform2 from '../components/Platform2';
 import Platform3 from '../components/Platform3';
-import Room3 from '../components/Room3';
+import MusicButton from '../components/MusicButton';
+
 
 const playerUrl = "/players";
 const enemiesUrl = "/enemies";
@@ -24,6 +28,8 @@ const MainContainer = () => {
     const [completedRoomOne, setCompletedRoomOne] = useState(false);
     const [completedRoomTwo, setCompletedRoomTwo] = useState(false);
     const [completedRoomThree, setCompletedRoomThree] = useState(false);
+
+    const [musicIsPlaying, setMusicIsPlaying] = useState(false)
 
     const updateRoomOneStatus = () => {
         setCompletedRoomOne(true);
@@ -82,13 +88,30 @@ const MainContainer = () => {
             console.log("LOADING");
         }
     }
+
+    const music = {
+        platform: new Howl({
+            src: ['assets/soundtrack.mp3'],
+            loop: true
+        }),
+        fight: new Howl({
+            src: ['assets/fight.mp3'],
+            loop: true
+        })}
+
+    const soundOn = ()=>{
+        setMusicIsPlaying(true)
+    }
+    const soundOff = ()=>{
+        setMusicIsPlaying(false)
+    }
     
     return (
         <Router>
             <Routes>
-                <Route path='/home' element={<HomePage character={character} updatePlayer={updatePlayer}/>}/>
-                <Route path='/platform1' element={<Platform1 character = {character}/>}/>
-                <Route path='/room1' element={<Room1 KelvinBridgeZombie={KelvinBridgeZombie} character={character} updateRoomOneStatus={updateRoomOneStatus}/>}/>
+                <Route path='/' element={<HomePage character={character} updatePlayer={updatePlayer} music={music.platform} soundOff={soundOff} soundOn={soundOn}/>}/>
+                <Route path='/platform1' element={<Platform1 character = {character} music={music.platform}/>}/>
+                <Route path='/room1' element={<Room1 KelvinBridgeZombie={KelvinBridgeZombie} character={character} music={music.fight} updateRoomOneStatus={updateRoomOneStatus}/>}/>
                 <Route path='/platform2' element={<Platform2 character = {character}/>}/>
                 <Route path='/room2' element={<Room2 KelvinBridgeZombie={KelvinBridgeZombie} character={character} updateRoomTwoStatus={updateRoomTwoStatus}/>}/>
                 <Route path='/platform3' element={<Platform3 character = {character}/>}/>
