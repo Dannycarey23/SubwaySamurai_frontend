@@ -49,5 +49,5 @@ const HomePage = ({character, updatePlayer}) => {
         </div> 
      );
 }
- 
+  
 export default HomePage;
