@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { Navigate, redirect, useNavigate } from 'react-router-dom';
 // import characterOne from 'assets/characterOne.png';
-// import '../components/Platform2.css';
+import '../components/Platform2.css';
   
 
 const Platform2 = ({character, music}) => {
@@ -40,13 +40,13 @@ const Platform2 = ({character, music}) => {
       }, [])
 
       return ( 
-        <>
+        <div id="platform2div">
            <h1>{name}</h1>
           <img src = "assets/KendokaV2.png" height= "500px" id = "Sprite" style={{ marginLeft: `${x}px` }}></img> 
           <div className="zombieDiv"> 
             <img src = "assets/ZOMBIE.png" height= "300px"/>
           </div>
-        </>
+        </div>
     );
 }
  

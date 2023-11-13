@@ -1,3 +1,8 @@
+body, html, #root{
+    height: 100vh;
+    width: 100vw;
+}
+
 #Sprite {
     position: absolute;
     bottom: 0;
@@ -11,14 +16,10 @@
     right: 0;
 }
 
-/* #zombieButton{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-} */
-
-body{
+#platform1div{
     background-image: url('../../public/assets/BridgeV3Moody.png');
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
+    width: 100vw;
 }
