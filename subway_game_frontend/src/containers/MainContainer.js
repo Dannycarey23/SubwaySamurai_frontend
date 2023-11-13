@@ -77,6 +77,7 @@ const MainContainer = () => {
             })
             .then(res => {
                 setPlayer(character);
+                console.log(character);
                 return res.json()
             })
             
@@ -92,9 +93,9 @@ const MainContainer = () => {
                 <Route path='/platform1' element={<Platform1 character = {player}/>}/>
                 <Route path='/room1' element={<Room1 KelvinBridgeZombie={KelvinBridgeZombie} character={player} updateRoomOneStatus={updateRoomOneStatus}/>}/>
                 <Route path='/platform2' element={<Platform2 character = {player}/>}/>
-                <Route path='/room2' element={<Room2 KelvinBridgeZombie={KelvinBridgeZombie} character={player} updateRoomTwoStatus={updateRoomTwoStatus}/>}/>
+                <Route path='/room2' element={<Room2 BarrowlandsBallroomZombie={BarrowlandsBallroomZombie} character={player} updateRoomTwoStatus={updateRoomTwoStatus}/>}/>
                 <Route path='/platform3' element={<Platform3 character = {player}/>}/>
-                <Route path='/room3' element={<Room3 KelvinBridgeZombie={KelvinBridgeZombie} character={player} updateRoomThreeStatus={updateRoomThreeStatus}/>}/>
+                <Route path='/room3' element={<Room3 LordProvost={LordProvost} character={player} updateRoomThreeStatus={updateRoomThreeStatus}/>}/>
 
                 <Route path='/success' element={<SuccessPage character={player} completedRoomOne={completedRoomOne} completedRoomTwo={completedRoomTwo} />}/>
                 <Route path='/failure' element={<FailurePage character={player}/>}/>

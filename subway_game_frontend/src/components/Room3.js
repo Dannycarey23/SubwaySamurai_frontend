@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../components/Room1.css';
 
-const Room3 = ({ KelvinBridgeZombie, character, updateRoomThreeStatus }) => {
-  const [zombieHP, setZombieHP] = useState(KelvinBridgeZombie.health);
+const Room3 = ({ LordProvost, character, updateRoomThreeStatus }) => {
+  const [zombieHP, setZombieHP] = useState(LordProvost.health);
   const [characterHP, setCharacterHP] = useState(character.health);
   const [isCharacterAttacked, setIsCharacterAttacked] = useState(false); //good idea
 
@@ -11,9 +11,10 @@ const Room3 = ({ KelvinBridgeZombie, character, updateRoomThreeStatus }) => {
 
   const handleAttackClick = () => {
     setTimeout(() => {
-      const newZombieHP = zombieHP - character.attackPoints;
+      const randomCharacterAttackPoints = Math.floor(Math.random() * 15) + 1; 
+      const newZombieHP = zombieHP - randomCharacterAttackPoints;
       setZombieHP(newZombieHP);
-      setIsCharacterAttacked(true); // Signal that character attack is completed
+      setIsCharacterAttacked(true); 
     }, 1000);
   };
 
@@ -21,15 +22,16 @@ const Room3 = ({ KelvinBridgeZombie, character, updateRoomThreeStatus }) => {
     const handleZombieAttack = () => {
       if (isCharacterAttacked && zombieHP > 0) {
         setTimeout(() => {
-          const newCharacterHP = characterHP - KelvinBridgeZombie.attackPoints;
+          const randomZombieAttackPoints = Math.floor(Math.random() * 15) + 1; 
+          const newCharacterHP = characterHP - randomZombieAttackPoints;
           setCharacterHP(newCharacterHP);
-          setIsCharacterAttacked(false); // Reset the signal for the next round
+          setIsCharacterAttacked(false); 
         }, 1000);
       }
     };
 
     handleZombieAttack();
-  }, [isCharacterAttacked, zombieHP, characterHP, KelvinBridgeZombie.attackPoints]);
+  }, [isCharacterAttacked, zombieHP, characterHP]);
 
   useEffect(() =>{
     if(zombieHP === 0 || zombieHP < 0){
@@ -40,15 +42,14 @@ const Room3 = ({ KelvinBridgeZombie, character, updateRoomThreeStatus }) => {
     }
   })
 
-
     return ( 
         <>
         <h1>I'm room 1</h1>
         <img src = "assets/KendokaV2.png" height= "400px" id="playerSprite"/>
-        <img src = "assets/ZOMBIE.png" height= "300px" id="zombieSprite"/>
+        <img src = "assets/LordProvost.png" height= "300px" id="zombieSprite"/>
         <button className='buttonAttack' onClick={handleAttackClick}>ATTACK</button>
         <progress id="playerHealth" value={characterHP} max="100"> 32% </progress>
-        <progress id="enemyHealth" value={zombieHP} max="50"> 32% </progress>
+        <progress id="enemyHealth" value={zombieHP} max="100"> 32% </progress>
         </>
      );
 }
