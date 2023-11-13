@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../components/Room1.css';
 
-const Room3 = ({ LordProvost, character, updateRoomThreeStatus }) => {
+const Room3 = ({ LordProvost, character, updateRoomThreeStatus, music }) => {
   const [zombieHP, setZombieHP] = useState(LordProvost.health);
   const [characterHP, setCharacterHP] = useState(character.health);
   const [isCharacterAttacked, setIsCharacterAttacked] = useState(false); //good idea
@@ -41,6 +41,8 @@ const Room3 = ({ LordProvost, character, updateRoomThreeStatus }) => {
       Navigate('/failure') //real url
     }
   })
+
+  useEffect(()=>{music.play()}, [])
 
     return ( 
         <>

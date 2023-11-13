@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import { Howler } from "howler";
 
-const SuccessPage = ({character, completedRoomOne, completedRoomTwo, destination}) => {
+const SuccessPage = ({character, completedRoomOne, completedRoomTwo, destination, music}) => {
 
     const Navigate = useNavigate();
 
     const handleClickEvent = () => {
+        Howler.stop()
         if (completedRoomOne == true){
             Navigate('/platform2')
         } else if (completedRoomTwo == true){
