@@ -25,7 +25,9 @@ const HomePage = ({character, updatePlayer}) => {
         console.log("Handle Submit has actually been called");
         updatePlayer({
             id: player.id,
-            name: player.name
+            name: player.name,
+            health: player.health,
+            attackPoints: player.attackPoints
         })
     }
 
