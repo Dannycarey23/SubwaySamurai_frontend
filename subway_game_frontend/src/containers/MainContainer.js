@@ -29,7 +29,6 @@ const MainContainer = () => {
     const [completedRoomTwo, setCompletedRoomTwo] = useState(false);
     const [completedRoomThree, setCompletedRoomThree] = useState(false);
 
-    // const [musicIsPlaying, setMusicIsPlaying] = useState(false)
 
     const updateRoomOneStatus = () => {
         setCompletedRoomOne(true);
@@ -65,7 +64,6 @@ const MainContainer = () => {
     
     
     const character = player[0];
-    // console.log({characterInMain: character});
 
     const KelvinBridgeZombie = enemies[0];
     const BarrowlandsBallroomZombie = enemies[1];
@@ -98,34 +96,9 @@ const MainContainer = () => {
             src: ['assets/fight.mp3'],
             loop: true
         })}
-
-    // const soundOn = ()=>{
-    //     setMusicIsPlaying(true)
-    // }
-    // const soundOff = ()=>{
-    //     setMusicIsPlaying(false)
-    // }
-
-    // const playPlatformMusic = ()=>{
-    //     music.platform.play()
-    // }
-    // const stopPlatformMusic = ()=>{
-    //     music.platform.stop()
-    // }
-
-    // const playFightMusic = ()=>{
-    //     music.fight.play()
-    // }
-    // const pauseFightMusic = ()=>{
-    //     music.fight.pause()
-    // }
-
-
-    
-    return (
+        
+        return (
         <Router>
-            {/* <button onClick={pauseFightMusic}>Stop Fight Music</button>
-            <button onClick={playFightMusic}>Play Fight Music</button> */}
             <Routes>
                 <Route path='/' element={<HomePage character={character} updatePlayer={updatePlayer} music={music.platform}/>}/>
                 <Route path='/platform1' element={<Platform1 character = {character} music={music.platform}/>}/>
@@ -146,6 +119,3 @@ const MainContainer = () => {
 }
  
 export default MainContainer;
-
-// this was passed as props to Music Button:  soundOff={soundOff} soundOn={soundOn}  musicIsPlaying={musicIsPlaying}
-// and this was passed to rooms: playFightMusic={playFightMusic} instead of music={music.fight}

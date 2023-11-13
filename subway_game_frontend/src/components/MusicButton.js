@@ -5,17 +5,13 @@ const MusicButton = ({music, soundOn, soundOff}) => {
     const [musicIsPlaying, setMusicIsPlaying] = useState(false)
     
     const playMusic = ()=>{
-        // if (!music.playing()){
             music.play()
             setMusicIsPlaying(true);
-        // }else{return}
     }
 
     const pauseMusic = ()=>{
-        // if(music.playing()){
         music.pause()
         setMusicIsPlaying(false);
-    // }
     }
 
     return ( 
