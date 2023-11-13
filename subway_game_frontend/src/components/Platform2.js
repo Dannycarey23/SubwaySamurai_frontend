@@ -38,6 +38,7 @@ const Platform2 = ({character}) => {
         <>
            <h1>{name}</h1>
           <img src = "assets/KendokaV2.png" height= "500px" id = "Sprite" style={{ marginLeft: `${x}px` }}></img> 
+          <img src = "assets/CivilianMale.gif" height= "300px" id = "Runner" ></img>
 
           
         </>
