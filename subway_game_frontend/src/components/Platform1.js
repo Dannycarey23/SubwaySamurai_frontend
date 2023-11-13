@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import { Howler } from 'howler';
 import { Navigate, redirect, useNavigate } from 'react-router-dom';
 import '../components/Platform1.css';
   
@@ -32,7 +33,7 @@ const Platform1 = ({character, music}) => {
       useEffect(() => {
         let newPage = '/room1'
         if (x >= window.innerWidth - 450){
-            music.stop()
+            Howler.stop()
             Navigate(newPage)
       }}, [x])
 
