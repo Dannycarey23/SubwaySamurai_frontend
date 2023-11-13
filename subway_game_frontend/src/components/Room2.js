@@ -14,7 +14,7 @@ const Room2 = ({ BarrowlandsBallroomZombie, character, updateRoomTwoStatus }) =>
       const randomCharacterAttackPoints = Math.floor(Math.random() * 15) + 1; 
       const newZombieHP = zombieHP - randomCharacterAttackPoints;
       setZombieHP(newZombieHP);
-      setIsCharacterAttacked(true); // Signal that character attack is completed
+      setIsCharacterAttacked(true); 
     }, 1000);
   };
 
@@ -25,7 +25,7 @@ const Room2 = ({ BarrowlandsBallroomZombie, character, updateRoomTwoStatus }) =>
           const randomZombieAttackPoints = Math.floor(Math.random() * 20) + 1; 
           const newCharacterHP = characterHP - randomZombieAttackPoints;
           setCharacterHP(newCharacterHP);
-          setIsCharacterAttacked(false); // Reset the signal for the next round
+          setIsCharacterAttacked(false); 
         }, 1000);
       }
     };

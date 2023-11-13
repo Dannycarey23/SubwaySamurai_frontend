@@ -22,7 +22,7 @@ const Room1 = ({ KelvinBridgeZombie, character, updateRoomOneStatus }) => {
   //   setTimeout(() => {
   //     const newZombieHP = zombieHP - character.attackPoints;
   //     setZombieHP(newZombieHP);
-  //     setIsCharacterAttacked(true); // Signal that character attack is completed
+  //     setIsCharacterAttacked(true); 
   //   }, 1000);
   // };
 
