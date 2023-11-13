@@ -3,7 +3,7 @@ import { Navigate, redirect, useNavigate } from 'react-router-dom';
 import '../components/Platform1.css';
   
 
-const Platform1 = ({character}) => {
+const Platform1 = ({character, music}) => {
     
     // const [name, setName] = useState(character.name)
     const [x, setX] = useState(0);
@@ -32,6 +32,7 @@ const Platform1 = ({character}) => {
       useEffect(() => {
         let newPage = '/room1'
         if (x >= window.innerWidth - 450){
+            music.stop()
             Navigate(newPage)
       }}, [x])
 

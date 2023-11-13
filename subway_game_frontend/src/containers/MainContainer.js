@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Howl } from "howler";
 import HomePage from '../components/HomePage';
 import SuccessPage from '../components/SuccessPage';
 import FailurePage from '../components/FailurePage';
@@ -85,19 +86,29 @@ const MainContainer = () => {
             console.log("LOADING");
         }
     }
+
+    const music = {
+        platform: new Howl({
+            src: ['assets/soundtrack.mp3'],
+            loop: true
+        }),
+        fight: new Howl({
+            src: ['assets/fight.mp3'],
+            loop: true
+        })}
     
     return (
         <Router>
             <Routes>
-                <Route path='/home' element={<HomePage character={player} updatePlayer={updatePlayer}/>}/>
-                <Route path='/platform1' element={<Platform1 character = {player}/>}/>
-                <Route path='/room1' element={<Room1 KelvinBridgeZombie={KelvinBridgeZombie} character={player} updateRoomOneStatus={updateRoomOneStatus}/>}/>
-                <Route path='/platform2' element={<Platform2 character = {player}/>}/>
-                <Route path='/room2' element={<Room2 BarrowlandsBallroomZombie={BarrowlandsBallroomZombie} character={player} updateRoomTwoStatus={updateRoomTwoStatus}/>}/>
-                <Route path='/platform3' element={<Platform3 character = {player}/>}/>
-                <Route path='/room3' element={<Room3 LordProvost={LordProvost} character={player} updateRoomThreeStatus={updateRoomThreeStatus}/>}/>
+                <Route path='/home' element={<HomePage character={player} updatePlayer={updatePlayer} music={music.platform}/>}/>
+                <Route path='/platform1' element={<Platform1 character = {player} music={music.platform}/>}/>
+                <Route path='/room1' element={<Room1 KelvinBridgeZombie={KelvinBridgeZombie} character={player} updateRoomOneStatus={updateRoomOneStatus} music={music.fight}/>}/>
+                <Route path='/platform2' element={<Platform2 character = {player} music={music.platform}/>}/>
+                <Route path='/room2' element={<Room2 BarrowlandsBallroomZombie={BarrowlandsBallroomZombie} character={player} updateRoomTwoStatus={updateRoomTwoStatus} music={music.fight}/>}/>
+                <Route path='/platform3' element={<Platform3 character = {player} music={music.platform}/>}/>
+                <Route path='/room3' element={<Room3 LordProvost={LordProvost} character={player} updateRoomThreeStatus={updateRoomThreeStatus} music={music.fight}/>}/>
 
-                <Route path='/success' element={<SuccessPage character={player} completedRoomOne={completedRoomOne} completedRoomTwo={completedRoomTwo} />}/>
+                <Route path='/success' element={<SuccessPage character={player} completedRoomOne={completedRoomOne} completedRoomTwo={completedRoomTwo} music={music.fight}/>}/>
                 <Route path='/failure' element={<FailurePage character={player}/>}/>
                 {/* <Route path='/home' element={<HomePage/>}/>
                 <Route path='/home' element={<HomePage/>}/> */}
