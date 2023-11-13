@@ -98,7 +98,7 @@ const MainContainer = () => {
                 <Route path='/room3' element={<Room3 LordProvost={LordProvost} character={player} updateRoomThreeStatus={updateRoomThreeStatus}/>}/>
 
                 <Route path='/success' element={<SuccessPage character={player} completedRoomOne={completedRoomOne} completedRoomTwo={completedRoomTwo} />}/>
-                <Route path='/failure' element={<FailurePage character={player}/>}/>
+                <Route path='/failure' element={<FailurePage character={player} completedRoomOne={completedRoomOne} completedRoomTwo={completedRoomTwo} />}/>
                 {/* <Route path='/home' element={<HomePage/>}/>
                 <Route path='/home' element={<HomePage/>}/> */}
 
