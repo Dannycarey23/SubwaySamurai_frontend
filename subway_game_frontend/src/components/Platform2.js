@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { Navigate, redirect, useNavigate } from 'react-router-dom';
 // import characterOne from 'assets/characterOne.png';
-// import '../components/Platform2.css';
+import '../components/Platform2.css';
   
 
 const Platform2 = ({character}) => {
@@ -38,7 +38,7 @@ const Platform2 = ({character}) => {
         <>
            <h1>{name}</h1>
           <img src = "assets/KendokaV2.png" height= "500px" id = "Sprite" style={{ marginLeft: `${x}px` }}></img> 
-          <img src = "assets/CivilianMale.gif" height= "300px" id = "Runner" ></img>
+          <img src = "assets/CivilianMale.gif" height= "300px" id = "Runner" style={{ marginLeft: `${x}px` }}></img>
 
           
         </>
