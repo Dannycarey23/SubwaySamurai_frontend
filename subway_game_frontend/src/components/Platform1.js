@@ -38,7 +38,6 @@ const Platform1 = ({character, music}) => {
       return ( 
         <>
         <div id="platformOneBackround">
-          <MusicButton music={music}/>
           <h1>{name}</h1>
           <img src = "assets/KendokaV2.png" height= "500px" id = "Sprite" style={{ marginLeft: `${x}px` }}></img>
           <div className="zombieDiv"> 

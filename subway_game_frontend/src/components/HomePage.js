@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { Navigate, redirect, useNavigate } from "react-router-dom";
 import MusicButton from "./MusicButton";
 
-const HomePage = ({character, updatePlayer, music, soundOn, soundOff}) => {
+const HomePage = ({character, updatePlayer, music, soundOn, soundOff, musicIsPlaying}) => {
 
     const [player, setPlayer] = useState(character)
 
@@ -34,7 +34,7 @@ const HomePage = ({character, updatePlayer, music, soundOn, soundOff}) => {
     
     return (
         <div>
-            <MusicButton music={music} soundOff={soundOff} soundOn={soundOn}/>
+            <MusicButton music={music} soundOff={soundOff} soundOn={soundOn}  musicIsPlaying={musicIsPlaying}/>
             <form onSubmit={handleSubmit}>
                 <h2>Set Player Name</h2>
                 <label htmlFor='name'>Player Name</label>

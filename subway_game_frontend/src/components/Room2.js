@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../components/Room1.css';
 
-const Room2 = ({ KelvinBridgeZombie, character, updateRoomTwoStatus }) => {
+const Room2 = ({ KelvinBridgeZombie, character, updateRoomTwoStatus, music }) => {
   const [zombieHP, setZombieHP] = useState(KelvinBridgeZombie.health);
   const [characterHP, setCharacterHP] = useState(character.health);
   const [isCharacterAttacked, setIsCharacterAttacked] = useState(false); //good idea
@@ -40,10 +40,12 @@ const Room2 = ({ KelvinBridgeZombie, character, updateRoomTwoStatus }) => {
     }
   })
 
+  useEffect(()=>{music.play()}, [])
+
 
     return ( 
         <>
-        <h1>I'm room 1</h1>
+        <h1>I'm room 2</h1>
         <img src = "assets/KendokaV2.png" height= "400px" id="playerSprite"/>
         <img src = "assets/ZOMBIE.png" height= "300px" id="zombieSprite"/>
         <button className='buttonAttack' onClick={handleAttackClick}>ATTACK</button>

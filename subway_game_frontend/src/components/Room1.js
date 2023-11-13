@@ -41,10 +41,11 @@ const Room1 = ({ KelvinBridgeZombie, character, updateRoomOneStatus, music }) =>
     }
   })
 
+  useEffect(()=>{music.play()}, [])
+
 
     return ( 
         <>
-        <MusicButton music={music}/>
         <h1>I'm room 1</h1>
         <img src = "assets/KendokaV2.png" height= "400px" id="playerSprite"/>
         <img src = "assets/ZOMBIE.png" height= "300px" id="zombieSprite"/>
