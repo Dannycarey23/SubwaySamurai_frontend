@@ -1,8 +1,8 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { Howler } from "howler";
 
-const SuccessPage = ({character, completedRoomOne, completedRoomTwo, music}) => {
+const SuccessPage = ({character, completedRoomOne, completedRoomTwo, destination, music}) => {
 
     const Navigate = useNavigate();
 
@@ -21,6 +21,7 @@ const SuccessPage = ({character, completedRoomOne, completedRoomTwo, music}) => 
     return(
         <div className="success">
         <h1>Congratulations {character.name}!</h1>
+        <h2>You are now travelling to {destination}, hold on tight</h2>
         <button onClick={handleClickEvent}></button>
         </div>
 
