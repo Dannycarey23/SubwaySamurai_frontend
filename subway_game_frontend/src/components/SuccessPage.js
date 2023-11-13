@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 
-const SuccessPage = ({character, completedRoomOne, completedRoomTwo}) => {
+const SuccessPage = ({character, completedRoomOne, completedRoomTwo, destination}) => {
 
     const Navigate = useNavigate();
 
@@ -19,6 +19,7 @@ const SuccessPage = ({character, completedRoomOne, completedRoomTwo}) => {
     return(
         <div className="success">
         <h1>Congratulations {character.name}!</h1>
+        <h2>You are now travelling to {destination}, hold on tight</h2>
         <button onClick={handleClickEvent}></button>
         </div>
 

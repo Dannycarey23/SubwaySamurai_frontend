@@ -19,6 +19,7 @@ const MainContainer = () => {
     const [enemies, setEnemies] = useState([]);
     const [player, setPlayer] = useState({});
     const [rooms, setRooms] = useState([]);  
+    const [destination, setDestination] = useState("");
     
     //levelChecks
     const [completedRoomOne, setCompletedRoomOne] = useState(false);
@@ -27,10 +28,12 @@ const MainContainer = () => {
 
     const updateRoomOneStatus = () => {
         setCompletedRoomOne(true);
+        setDestination("Barrowlands")
     }
 
     const updateRoomTwoStatus = () => {
         setCompletedRoomTwo(true);
+        setDestination("Buchannan Street")
     }
 
     const updateRoomThreeStatus = () => {
@@ -97,7 +100,7 @@ const MainContainer = () => {
                 <Route path='/platform3' element={<Platform3 character = {player}/>}/>
                 <Route path='/room3' element={<Room3 LordProvost={LordProvost} character={player} updateRoomThreeStatus={updateRoomThreeStatus}/>}/>
 
-                <Route path='/success' element={<SuccessPage character={player} completedRoomOne={completedRoomOne} completedRoomTwo={completedRoomTwo} />}/>
+                <Route path='/success' element={<SuccessPage character={player} completedRoomOne={completedRoomOne} completedRoomTwo={completedRoomTwo} destination={destination} />}/>
                 <Route path='/failure' element={<FailurePage character={player} completedRoomOne={completedRoomOne} completedRoomTwo={completedRoomTwo} />}/>
                 {/* <Route path='/home' element={<HomePage/>}/>
                 <Route path='/home' element={<HomePage/>}/> */}
