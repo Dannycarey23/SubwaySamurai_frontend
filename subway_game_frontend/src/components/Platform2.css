@@ -18,7 +18,9 @@
     right: 0;
 }
 
-/* body{
-    /* background-image: url('../../public/assets/BB.png'); */
-    /* background-repeat: no-repeat; */
-/* } */ 
+ #platform2div{
+     background-image: url('../../public/assets/BB.png');
+     background-repeat: no-repeat; 
+     height: 100vh;
+    width: 100vw;
+ } 
