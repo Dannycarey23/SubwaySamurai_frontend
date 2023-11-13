@@ -5,8 +5,10 @@ import '../components/Platform1.css';
 
 const Platform1 = ({character}) => {
     
-    const [name, setName] = useState(character.name)
+    // const [name, setName] = useState(character.name)
     const [x, setX] = useState(0);
+    console.log({character});
+  
     
     
     const Navigate = useNavigate();
@@ -36,7 +38,7 @@ const Platform1 = ({character}) => {
       return ( 
         <>
         <div id="platformOneBackround">
-          <h1>{name}</h1>
+          <h1>{character.name}</h1>
           <img src = "assets/KendokaV2.png" height= "500px" id = "Sprite" style={{ marginLeft: `${x}px` }}></img>
           <div className="zombieDiv"> 
             <img src = "assets/ZOMBIE.png" height= "300px"/>

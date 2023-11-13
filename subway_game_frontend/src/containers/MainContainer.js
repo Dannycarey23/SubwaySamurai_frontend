@@ -17,7 +17,7 @@ const roomsUrl = "/rooms";
 
 const MainContainer = () => {
     const [enemies, setEnemies] = useState([]);
-    const [player, setPlayer] = useState([]);
+    const [player, setPlayer] = useState({});
     const [rooms, setRooms] = useState([]);  
     
     //levelChecks
@@ -41,7 +41,7 @@ const MainContainer = () => {
     useEffect(()=>{
         fetch(playerUrl)
         .then(res=>res.json())
-        .then(data=>setPlayer(data))
+        .then(data=>setPlayer(data[0]))
 
         fetch(enemiesUrl)
         .then(res=>res.json())
@@ -58,7 +58,7 @@ const MainContainer = () => {
 
     
     
-    const character = player[0];
+    // const character = player[0];
     // console.log({characterInMain: character});
 
     const KelvinBridgeZombie = enemies[0];
@@ -67,7 +67,9 @@ const MainContainer = () => {
   
 
     const updatePlayer = (character) => {
+       
         if (character.id){
+            
             return fetch(playerUrl + '/' + character.id,{
                 method: "PUT",
                 body: JSON.stringify(character),
@@ -75,7 +77,7 @@ const MainContainer = () => {
             })
             .then(res => {
                 setPlayer(character);
-                res.json()
+                return res.json()
             })
             
         } else {
@@ -86,16 +88,16 @@ const MainContainer = () => {
     return (
         <Router>
             <Routes>
-                <Route path='/home' element={<HomePage character={character} updatePlayer={updatePlayer}/>}/>
-                <Route path='/platform1' element={<Platform1 character = {character}/>}/>
-                <Route path='/room1' element={<Room1 KelvinBridgeZombie={KelvinBridgeZombie} character={character} updateRoomOneStatus={updateRoomOneStatus}/>}/>
-                <Route path='/platform2' element={<Platform2 character = {character}/>}/>
-                <Route path='/room2' element={<Room2 KelvinBridgeZombie={KelvinBridgeZombie} character={character} updateRoomTwoStatus={updateRoomTwoStatus}/>}/>
-                <Route path='/platform3' element={<Platform3 character = {character}/>}/>
-                <Route path='/room3' element={<Room3 KelvinBridgeZombie={KelvinBridgeZombie} character={character} updateRoomThreeStatus={updateRoomThreeStatus}/>}/>
+                <Route path='/home' element={<HomePage character={player} updatePlayer={updatePlayer}/>}/>
+                <Route path='/platform1' element={<Platform1 character = {player}/>}/>
+                <Route path='/room1' element={<Room1 KelvinBridgeZombie={KelvinBridgeZombie} character={player} updateRoomOneStatus={updateRoomOneStatus}/>}/>
+                <Route path='/platform2' element={<Platform2 character = {player}/>}/>
+                <Route path='/room2' element={<Room2 KelvinBridgeZombie={KelvinBridgeZombie} character={player} updateRoomTwoStatus={updateRoomTwoStatus}/>}/>
+                <Route path='/platform3' element={<Platform3 character = {player}/>}/>
+                <Route path='/room3' element={<Room3 KelvinBridgeZombie={KelvinBridgeZombie} character={player} updateRoomThreeStatus={updateRoomThreeStatus}/>}/>
 
-                <Route path='/success' element={<SuccessPage character={character} completedRoomOne={completedRoomOne} completedRoomTwo={completedRoomTwo} />}/>
-                <Route path='/failure' element={<FailurePage character={character}/>}/>
+                <Route path='/success' element={<SuccessPage character={player} completedRoomOne={completedRoomOne} completedRoomTwo={completedRoomTwo} />}/>
+                <Route path='/failure' element={<FailurePage character={player}/>}/>
                 {/* <Route path='/home' element={<HomePage/>}/>
                 <Route path='/home' element={<HomePage/>}/> */}
 
