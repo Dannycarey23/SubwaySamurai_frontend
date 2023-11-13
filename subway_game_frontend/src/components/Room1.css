@@ -47,3 +47,10 @@ progress::-webkit-progress-value { background: red; }
     padding: 15px 32px;
 }
 
+#room1div{
+    background-image: url('../../public/assets/BattleBackground.png');
+    background-repeat: no-repeat; 
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}

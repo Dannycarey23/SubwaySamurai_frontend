@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../components/Room1.css';
+import '../components/Room3.css';
 
 const Room3 = ({ LordProvost, character, updateRoomThreeStatus, music }) => {
   const [zombieHP, setZombieHP] = useState(LordProvost.health);
@@ -45,14 +45,14 @@ const Room3 = ({ LordProvost, character, updateRoomThreeStatus, music }) => {
   useEffect(()=>{music.play()}, [])
 
     return ( 
-        <>
+        <div id="room3div">
         <h1>I'm room 1</h1>
         <img src = "assets/KendokaV2.png" height= "400px" id="playerSprite"/>
         <img src = "assets/LordProvost.png" height= "300px" id="zombieSprite"/>
         <button className='buttonAttack' onClick={handleAttackClick}>ATTACK</button>
         <progress id="playerHealth" value={characterHP} max="100"> 32% </progress>
         <progress id="enemyHealth" value={zombieHP} max="100"> 32% </progress>
-        </>
+        </div>
      );
 }
  

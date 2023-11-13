@@ -54,14 +54,14 @@ const Room1 = ({ KelvinBridgeZombie, character, updateRoomOneStatus, music }) =>
 
 
     return ( 
-        <>
+        <div id="room1div">
         <h1>I'm room 1</h1>
         <img src = "assets/KendokaV2.png" height= "400px" id="playerSprite"/>
         <img src = "assets/ZOMBIE.png" height= "300px" id="zombieSprite"/>
         <button className='buttonAttack' onClick={handleAttackClick}>ATTACK</button>
         <progress id="playerHealth" value={characterHP} max="100"> 32% </progress>
         <progress id="enemyHealth" value={zombieHP} max="50"> 32% </progress>
-        </>
+        </div>
      );
 }
  

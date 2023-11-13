@@ -39,10 +39,10 @@ const Platform3 = ({character, music}) => {
       }, [])
 
       return ( 
-        <>
+        <div id="platform3div">
           <h1>{name}</h1>
           <img src = "assets/KendokaV2.png" height= "500px" id = "Sprite" style={{ marginLeft: `${x}px` }}></img>
-        </>
+        </div>
     );
 }
  

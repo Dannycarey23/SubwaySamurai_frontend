@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { Navigate, redirect, useNavigate } from "react-router-dom";
 import MusicButton from "./MusicButton";
+import '../components/HomePage.css';
 
 const HomePage = ({character, updatePlayer, music}) => {
 
@@ -34,7 +35,7 @@ const HomePage = ({character, updatePlayer, music}) => {
 
     
     return (
-        <div>
+        <div id="homepageDiv">
         <MusicButton music={music}/>
         <form onSubmit={handleSubmit}>
         <h2>Set Player Name</h2>
