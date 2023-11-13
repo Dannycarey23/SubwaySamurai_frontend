@@ -100,6 +100,7 @@ const MainContainer = () => {
     return (
         <Router>
             <Routes>
+
                 <Route path='/home' element={<HomePage character={player} updatePlayer={updatePlayer} music={music.platform}/>}/>
                 <Route path='/platform1' element={<Platform1 character = {player} music={music.platform}/>}/>
                 <Route path='/room1' element={<Room1 KelvinBridgeZombie={KelvinBridgeZombie} character={player} updateRoomOneStatus={updateRoomOneStatus} music={music.fight}/>}/>
@@ -109,7 +110,8 @@ const MainContainer = () => {
                 <Route path='/room3' element={<Room3 LordProvost={LordProvost} character={player} updateRoomThreeStatus={updateRoomThreeStatus} music={music.fight}/>}/>
 
                 <Route path='/success' element={<SuccessPage character={player} completedRoomOne={completedRoomOne} completedRoomTwo={completedRoomTwo} music={music.fight}/>}/>
-                <Route path='/failure' element={<FailurePage character={player}/>}/>
+                <Route path='/failure' element={<FailurePage character={player} completedRoomOne={completedRoomOne} completedRoomTwo={completedRoomTwo} />}/>
+               
                 {/* <Route path='/home' element={<HomePage/>}/>
                 <Route path='/home' element={<HomePage/>}/> */}
 

@@ -19,10 +19,10 @@ const SuccessPage = ({character, completedRoomOne, completedRoomTwo, music}) => 
     }
 
     return(
-        <>
+        <div className="success">
         <h1>Congratulations {character.name}!</h1>
         <button onClick={handleClickEvent}></button>
-        </>
+        </div>
 
     )
 }
