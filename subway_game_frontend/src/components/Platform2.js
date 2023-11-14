@@ -13,11 +13,12 @@ const Platform2 = ({character, music}) => {
     
     const Navigate = useNavigate();
 
+    
     useEffect(() => {
       function moveCharacter(e) {
-        if (e.keyCode === 39) {
+        if (e.keyCode === 68) {
           setX((x) => x += 20);
-          } else if (e.keyCode === 37) {
+          } else if (e.keyCode === 65) {
             setX((x) => x -= 20);
           }
 

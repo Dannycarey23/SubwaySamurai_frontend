@@ -1,4 +1,4 @@
-body{
+.successPageDiv{
     background-image: url('../../public/assets/successbackground.png');
     background-repeat: no-repeat; 
     background-size: cover;
@@ -28,7 +28,7 @@ h2{
     color: black;
     width: 25rem;
     height:4rem;
-    margin-top: 10rem;
+    margin-top: 12rem;
     padding: 1rem;
     font-weight: bold;
   }
@@ -39,11 +39,11 @@ h2{
     transform: translateY(4px);
   }
 
-  .successPageDiv{
+  .headerSuccess{
     background-color: black;
     display: flex;
     justify-content: center;
     text-align: center;
-    height: 30%;
     padding-bottom: 1em;
+    height:30%;
   }
