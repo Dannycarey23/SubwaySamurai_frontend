@@ -42,14 +42,17 @@ const Platform2 = ({character, music}) => {
       }, [])
 
       return ( 
-        <div id="platform2div">
-           <h1>{name}</h1>
+        <div className={styles.platform2div}>
+          
+          <div className={styles.bubble} contenteditable> 
+            <p>The coast is clear so once again you jump on the Subway praying it doesn’t break down again. But surprise, your out of luck again . You leave the station bewildered but are met with the blinding lights of the Barrowlands. Your younger days flash back to you but you quickly refocus as you have a job to do.</p>
+          </div>
+
           <img src = "assets/KendokaV2.png" height= "500px" id = "Sprite" style={{ marginLeft: `${x}px` }}></img> 
-          <div className="zombieDiv"> 
+          
+          <div className={styles.zombieDiv}>
             <img src = "assets/ZOMBIE.png" height= "300px"/>
           </div>
-          <div class="bubble" contenteditable> The coast is clear so once again you jump on the Subway praying it doesn’t break down again. But surprise, your out of luck again . You leave the station bewildered but are met with the blinding lights of the Barrowlands. Your younger days flash back to you but you quickly refocus as you have a job to do.
-        </div>
         </div>
     );
 }

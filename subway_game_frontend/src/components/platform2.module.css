@@ -4,7 +4,7 @@
 } */
 
 .platform2div{
-    background-image: url('../../public/assets/BridgeV3Moody.png');
+    background-image: url('../../public/assets/BB.png');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -27,13 +27,13 @@
     } 
 }
 
-.runner {
+/* .runner {
     position: absolute;
     bottom: 3.5rem;
     animation: linear infinite;
     animation-name: run;
     animation-duration: 5s;
-} 
+}  */
 
 .bubble {
     opacity:0.75;

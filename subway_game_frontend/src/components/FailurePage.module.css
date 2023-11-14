@@ -1,0 +1,45 @@
+.failurePageDiv{
+    background-image: url('../../public/assets/FailureBackground.png');
+    background-repeat: no-repeat; 
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+.failure{
+    text-align: center;
+    position: fixed;
+    color: white;
+    opacity: 1;
+    margin-top: 5rem;
+    font-size: 60px;
+}
+
+
+.continueButton{
+    background-color: yellow;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 30px;
+    color: black;
+    width: 25rem;
+    height:4rem;
+    margin-top: 12rem;
+    padding: 1rem;
+    font-weight: bold;
+  }
+  
+.continueButton:active {
+    background-color: white;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+.headerFailure{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 1em;
+    height:30%;
+  }

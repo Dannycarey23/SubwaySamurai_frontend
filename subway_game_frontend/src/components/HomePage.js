@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
 import { Navigate, redirect, useNavigate } from "react-router-dom";
 import MusicButton from "./MusicButton";
-import '../components/HomePage.css';
+import styles from './HomePage.module.css';
+// import '../components/HomePage.css';
 
 const HomePage = ({character, updatePlayer, music}) => {
 
@@ -41,25 +42,25 @@ const HomePage = ({character, updatePlayer, music}) => {
 
     
     return (
-        <div id="homepageDiv">
-        <div className="musicButtonDiv">
-            <MusicButton music={music}/>
-        </div>
-        <div className='centeredDiv'>
-        <form id='form' onSubmit={handleSubmit}>
-        <h1>SUBWAY SAMURAI</h1>
-        <label htmlFor='name'></label>
-        <input 
-        type='text'
-        id='name'
-        placeholder="Enter player name"
-        required
-        onChange={handleNameChange}
-        />
-        <br></br>
-        <button className="startButton" type="submit" name="submit" value="submit" onClick={handleSubmit}>START GAME</button>
-        </form>
-        </div>
+        <div className={styles.homepageDiv}>
+            <div className={styles.musicButtonDiv}>
+                <MusicButton music={music}/>
+            </div>
+            <div className={styles.centeredDiv}>
+                <form className={styles.form} onSubmit={handleSubmit}>
+                    <h1 className={styles.title}>SUBWAY SAMURAI</h1>
+                    <label htmlFor='name'></label>
+                    <input 
+                        type='text'
+                        id='name'
+                        placeholder="Enter player name"
+                        required
+                        onChange={handleNameChange}
+                    />
+                    <br></br>
+                    <button className={styles.startButton} type="submit" name="submit" value="submit" onClick={handleSubmit}>START GAME</button>
+                </form>
+            </div>
         </div> 
      );
 }

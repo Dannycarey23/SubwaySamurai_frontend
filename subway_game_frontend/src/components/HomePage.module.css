@@ -10,14 +10,14 @@
 
 }
 
-#form {
+.form {
     caret: black underscore;
     padding: 20px;
     border-radius: 8px;
     color: #fff;
 }
 
-#form ::placeholder {
+.form ::placeholder {
     text-align: center; 
  }
 
@@ -33,11 +33,26 @@
     left: 1rem;
 }
 
-h1 {
+.title {
     margin-top: 0;
     font-size: 110px;
-    opacity: 0.8
+    opacity: 1;
   }
 
-
+.startButton{
+    background-color: yellow;
+    margin-top: 1.5rem;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 21px;
+    color: black;
+    width: 15rem;
+    height:4rem;
+    font-weight: bold;
+  }
+  
+.startButton:active {
+    background-color: white;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
 

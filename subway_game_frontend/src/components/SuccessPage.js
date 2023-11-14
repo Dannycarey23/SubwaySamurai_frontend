@@ -24,8 +24,8 @@ const SuccessPage = ({character, completedRoomOne, completedRoomTwo, destination
     return(
         <div className={styles.successPageDiv}>
             <div className={styles.headerSuccess}>
-            <h1>Congratulations {character.name}!</h1>
-            <h2>You are now travelling to {destination}, hold on tight</h2>
+            <h1 className={styles.successH1}>Congratulations {character.name}!</h1>
+            <h2 className={styles.successH2}>You are now travelling to {destination}, hold on tight</h2>
             <button className={styles.continueButton} onClick={handleClickEvent}>Continue?</button>
             </div>
             </div>
