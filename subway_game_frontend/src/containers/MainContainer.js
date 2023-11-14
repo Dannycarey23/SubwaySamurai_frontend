@@ -54,7 +54,23 @@ const MainContainer = () => {
         fetch(roomsUrl)
         .then(res=>res.json())
         .then(data=>setRooms(data))
-    }, [])
+
+        function controlSound(e) {
+            if (e.keyCode === 77) {
+              Howler.mute(true);
+            } else if (e.keyCode === 85) {
+                Howler.mute(false);
+            }
+    
+            }
+            document.addEventListener('keydown', controlSound);
+        
+            return () => {
+              document.removeEventListener('keydown', controlSound);
+            };
+        }, [])
+
+    
 
     if (player.length === 0 || enemies.length === 0 || rooms.length === 0) {
         return <h1>Loading...</h1>

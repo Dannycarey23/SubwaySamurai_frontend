@@ -22,7 +22,7 @@ const SuccessPage = ({character, completedRoomOne, completedRoomTwo, destination
         <div className="success">
         <h1>Congratulations {character.name}!</h1>
         <h2>You are now travelling to {destination}, hold on tight</h2>
-        <button onClick={handleClickEvent}></button>
+        <button onClick={handleClickEvent}>continue</button>
         </div>
 
     )
