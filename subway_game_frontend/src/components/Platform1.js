@@ -4,6 +4,17 @@ import { Navigate, redirect, useNavigate } from 'react-router-dom';
 import styles from './platform1.module.css'
 // import '../components/Platform1.css';
   
+const runners = [];
+
+const runnersCount = 2;
+
+for (let i = 0; i < runnersCount; i++) {
+  runners.push({ 
+    animationDuration: `${Math.random() * 5 + 3}s`, 
+    bottom: `${Math.random() * 175}px`,
+    right: `${Math.random() * 350 + 50}px`
+  })
+}
 
 const Platform1 = ({character, music}) => {
     
@@ -17,9 +28,9 @@ const Platform1 = ({character, music}) => {
 
     useEffect(() => {
       function moveCharacter(e) {
-        if (e.keyCode === 39) {
+        if (e.keyCode === 68) {
           setX((x) => x += 20);
-          } else if (e.keyCode === 37) {
+          } else if (e.keyCode === 65) {
             setX((x) => x -= 20);
           }
 
@@ -38,17 +49,7 @@ const Platform1 = ({character, music}) => {
             Navigate(newPage)
       }}, [x])
 
-      const runners = [];
 
-      const runnersCount = 6;
-
-      for (let i = 0; i < runnersCount; i++) {
-        runners.push({ 
-          animationDuration: `${Math.random() * 5 + 3}s`, 
-          bottom: `${Math.random() * 200}px`,
-          right: `${Math.random() * 350 + 50}px`
-        })
-      }
 
       return ( 
         <>
@@ -56,7 +57,8 @@ const Platform1 = ({character, music}) => {
           <div className={styles.bubble} contenteditable> 
             <p>{character.name} enters the subway towards the city centre as it suddenly screams to a halt at Kelvin Bridge. Faint screams and growls echo around the subway chambers. Luckily you still have your trusty bamboo sword and armour. We all know weegies can fight so don’t take the zombies lightly.</p>
           </div>
-          <img src = "assets/KendokaV2.png" height= "500px" className = {styles.Sprite} style={{ marginLeft: `${x}px` }}></img>
+          <div>
+          <img src = "assets/KendokaV2.png" height= "500px" className = {styles.Sprite} style={{ left: `${x}px` }}></img> </div>
           {runners.map((runner) => (
             <img className={styles.runner} src = "assets/CivilianMale.gif" height= "300px" style={runner}></img>
           ))}
