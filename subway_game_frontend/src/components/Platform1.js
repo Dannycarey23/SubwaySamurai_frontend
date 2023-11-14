@@ -45,7 +45,9 @@ const Platform1 = ({character, music}) => {
           <div>
           <img id="zombieSprite" src = "assets/CivilianMale.gif" height= "300px"></img>
           </div>
-        </div>
+          <div class="bubble" contenteditable> Your player enters the subway towards the city centre as it suddenly screams to a halt at Kelvin Bridge. Faint screams and growls echo around the subway chambers. Luckily you still have your trusty bamboo sword and armour. We all know weegies can fight so don’t take the zombies lightly.
+          </div>
+          </div>
         </>
     );
 }

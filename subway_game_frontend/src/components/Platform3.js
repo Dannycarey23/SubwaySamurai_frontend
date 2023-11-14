@@ -42,7 +42,12 @@ const Platform3 = ({character, music}) => {
         <div id="platform3div">
           <h1>{name}</h1>
           <img src = "assets/KendokaV2.png" height= "500px" id = "Sprite" style={{ marginLeft: `${x}px` }}></img>
+          <div class="bubble" contenteditable>You have chanced your luck twice so as they say, third times the charm. This time you make it 3 stops without breaking down and you make it to the glorious city centre. Before you can walk 5 feet you are greeted by the heathen also known as the Lord Provost. Half zombie half human (this is what you trained for!).
+          </div>
+        
         </div>
+
+    
     );
 }
  

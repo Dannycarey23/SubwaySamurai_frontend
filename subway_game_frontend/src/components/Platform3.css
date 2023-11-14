@@ -30,3 +30,38 @@ body, html, #root{
      height: 100vh;
      width: 100vw;
 } 
+
+
+
+
+.bubble {
+    opacity:0.5;
+    margin-left: 450px;
+    position: relative;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    width: 600px;
+    background: #fff;
+    border-radius: 40px;
+    padding: 24px;
+    text-align: center;
+    color: #000;
+
+  }
+
+  .bubble{
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  } 
+  
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.5;
+     } 
+}
+  
