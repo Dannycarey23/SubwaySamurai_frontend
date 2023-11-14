@@ -3,51 +3,49 @@
     width: 100vw;
 } */
 
-#Sprite {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: 0.1s;
-}
-
-#zombieSprite {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: 0.1s;
-}
-
-#zombieButton{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
-
-#platform3div{
+.platform3div{
     background-image: url('../../public/assets/platform3.png');
+    background-color: red;
      background-repeat: no-repeat; 
      background-size: cover;
      height: 100vh;
      width: 100vw;
 } 
+.Sprite {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.1s;
+}
 
+.zombieSprite {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.1s;
+}
+
+.zombieButton{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
 
 
 
 .bubble {
-    opacity:0.5;
-    margin-left: 450px;
-    position: relative;
+    position: fixed;
+    bottom: 60%;
+    right: 33%;
+    padding: 1em;
     font-family: 'Pixelify Sans', sans-serif;
-    font-size: 24px;
-    line-height: 24px;
-    width: 600px;
+    font-size: 30px;
+    line-height: 30px;
+    width: 700px;
     background: #fff;
-    border-radius: 40px;
-    padding: 24px;
     text-align: center;
     color: #000;
-
+    border: thick dashed black;
   }
 
   .bubble{
@@ -61,7 +59,7 @@
         opacity: 0;
     }
     100% {
-        opacity: 0.5;
+        opacity: 1;
      } 
 }
   
