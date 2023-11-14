@@ -17,7 +17,7 @@ Your players quest for survival brings them to The Barrowlands, another undergro
 
 
 
-Are you ready?
+Thrive and Survive.
 
 
 # Installation Guide 
