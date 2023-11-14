@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './room1.module.css';
 import {Howler} from 'howler';
-// import '../components/Room1.css';
 
 const Room1 = ({ KelvinBridgeZombie, character, updateRoomOneStatus, music, sfx }) => {
   const [zombieHP, setZombieHP] = useState(KelvinBridgeZombie.health);
