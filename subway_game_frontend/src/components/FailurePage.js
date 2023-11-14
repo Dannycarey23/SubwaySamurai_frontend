@@ -8,12 +8,11 @@ const FailurePage = ({character, completedRoomOne, completedRoomTwo, sfx}) => {
 
     const handleClickEvent = () => {
         Howler.stop()
-        if (completedRoomOne == false){
-            Navigate('/platform1')
-        } else if (completedRoomTwo == false || completedRoomOne == true){
+        if(completedRoomTwo == false && completedRoomOne == true){
             Navigate('/platform2')
-        }
-        else {
+        } else if (completedRoomTwo == false && completedRoomOne == false){
+            Navigate('/platform1')
+        } else {
             Navigate('/platform3')
         }
     }

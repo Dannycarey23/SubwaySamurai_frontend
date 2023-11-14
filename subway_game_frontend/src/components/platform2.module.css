@@ -18,6 +18,13 @@
     transition: 0.1s;
 }
 
+.bbZombie{
+    position: fixed;
+    bottom: 1.5rem;
+    right: 0;
+    
+}
+
 @keyframes run {
     0% {
         right: -10%;
