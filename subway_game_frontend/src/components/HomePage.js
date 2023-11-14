@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { Navigate, redirect, useNavigate } from "react-router-dom";
 import MusicButton from "./MusicButton";
 import '../components/HomePage.css';
@@ -9,7 +9,13 @@ const HomePage = ({character, updatePlayer, music}) => {
 
     const Navigate = useNavigate()
 
-    
+    // useEffect(() => {
+    //     function updateNameAndStartGame(){
+    //         handleNameChange()
+    //         handleSubmit()
+    //         changePage()
+    //     }
+    // }, [])
 
     const changePage = () => {
         let newPage = '/platform1'
@@ -24,35 +30,40 @@ const HomePage = ({character, updatePlayer, music}) => {
 
     const handleSubmit = ev => {
         ev.preventDefault();
-        console.log("Handle Submit has actually been called");
         updatePlayer({
             id: player.id,
             name: player.name,
             health: player.health,
             attackPoints: player.attackPoints
-        })
+        }) 
+        changePage();
     }
 
     
     return (
         <div id="homepageDiv">
-        <MusicButton music={music}/>
-        <form onSubmit={handleSubmit}>
-        <h2>Set Player Name</h2>
-        <label htmlFor='name'>Player Name</label>
+        <div className="musicButtonDiv">
+            <MusicButton music={music}/>
+        </div>
+        <div className='centeredDiv'>
+        <form id='form' onSubmit={handleSubmit}>
+        <h1>SUBWAY SAMURAI</h1>
+        <label htmlFor='name'></label>
         <input 
         type='text'
         id='name'
-        defaultValue={player.name}
+        placeholder="Enter player name"
         required
         onChange={handleNameChange}
         />
-        <button type="submit" name="submit" value="Update" onClick={handleSubmit}/>
+        <br></br>
+        <button type="submit" name="submit" value="submit" onClick={handleSubmit}>START GAME</button>
         </form>
-
-        <button onClick={changePage}>Start Game</button>
+        </div>
         </div> 
      );
 }
  
 export default HomePage;
+
+
