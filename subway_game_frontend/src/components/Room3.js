@@ -35,7 +35,7 @@ const Room3 = ({ LordProvost, character, updateRoomThreeStatus, music }) => {
 
   useEffect(() =>{
     if(zombieHP === 0 || zombieHP < 0){
-      Navigate('/success');
+      Navigate('/bigsuccess');
       updateRoomThreeStatus(); //real url
     } else if (characterHP === 0 || characterHP < 0 ){
       Navigate('/failure') //real url
