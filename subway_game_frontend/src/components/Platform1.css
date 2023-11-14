@@ -1,57 +1,51 @@
-body, html, #root{
+ /* body, html, #root{
     height: 100vh;
     width: 100vw;
-}
+} */
 
-#Sprite {
+/* #Sprite {
     position: absolute;
-    bottom: 0;
+    bottom: 1.5rem;
     left: 0;
     transition: 0.1s;
-}
+} */
 
-.zombieDiv{
+/* .runner{
     position: absolute;
-    bottom: 0;
+    bottom: 3.5rem;
     right: 0;
-}
+}  */
 
-#platform1div{
+/* #platform1div{
     background-image: url('../../public/assets/BridgeV3Moody.png');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
     width: 100vw;
-}
+}  */
 
-.bubble {
-    opacity:0.5;
-    margin-left: 450px;
-    position: relative;
+/* .bubble {
+    opacity:0.75;
+    position: fixed;
+    bottom: 60%;
+    right: 25%;
+    padding: 1em;
     font-family: 'Pixelify Sans', sans-serif;
-    font-size: 24px;
-    line-height: 24px;
-    width: 600px;
+    font-size: 30px;
+    line-height: 30px;
+    width: 700px;
     background: #fff;
-    border-radius: 40px;
-    padding: 24px;
     text-align: center;
     color: #000;
+    border: thick dashed black;
+  } 
 
-  }
-
-  .bubble{
+ .bubble{
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-  } 
+  }  */
   
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0.5;
-     } 
-}
-  
+
+
+   

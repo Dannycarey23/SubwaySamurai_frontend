@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import { Navigate, redirect, useNavigate } from 'react-router-dom';
 // import characterOne from 'assets/characterOne.png';
-import '../components/Platform2.css';
+import styles from './platform2.module.css'
+//import '../components/Platform2.css';
   
 
 const Platform2 = ({character, music}) => {

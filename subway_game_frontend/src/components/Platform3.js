@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { Navigate, redirect, useNavigate } from 'react-router-dom';
-import '../components/Platform3.css';
+import styles from './platform3.module.css'
+//import '../components/Platform3.css';
   
 
 const Platform3 = ({character, music}) => {

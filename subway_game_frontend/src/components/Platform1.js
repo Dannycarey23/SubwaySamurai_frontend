@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import { Howler } from 'howler';
 import { Navigate, redirect, useNavigate } from 'react-router-dom';
-import '../components/Platform1.css';
+import styles from './platform1.module.css'
+// import '../components/Platform1.css';
   
 
 const Platform1 = ({character, music}) => {
@@ -37,16 +38,30 @@ const Platform1 = ({character, music}) => {
             Navigate(newPage)
       }}, [x])
 
+      const runners = [];
+
+      const runnersCount = 6;
+
+      for (let i = 0; i < runnersCount; i++) {
+        runners.push({ 
+          animationDuration: `${Math.random() * 5 + 3}s`, 
+          bottom: `${Math.random() * 200}px`,
+          right: `${Math.random() * 350 + 50}px`
+        })
+      }
+
       return ( 
         <>
-        <div id="platform1div">
-          <img src = "assets/KendokaV2.png" height= "500px" id = "Sprite" style={{ marginLeft: `${x}px` }}></img>
-          <div className='zombieDiv'>
-          <img id="zombieSprite" src = "assets/CivilianMale.gif" height= "300px"></img>
+        <div className={styles.platform1div}>
+          <div className={styles.bubble} contenteditable> 
+            <p>{character.name} enters the subway towards the city centre as it suddenly screams to a halt at Kelvin Bridge. Faint screams and growls echo around the subway chambers. Luckily you still have your trusty bamboo sword and armour. We all know weegies can fight so don’t take the zombies lightly.</p>
           </div>
-          <div class="bubble" contenteditable> Your player enters the subway towards the city centre as it suddenly screams to a halt at Kelvin Bridge. Faint screams and growls echo around the subway chambers. Luckily you still have your trusty bamboo sword and armour. We all know weegies can fight so don’t take the zombies lightly.
-          </div>
-          </div>
+          <img src = "assets/KendokaV2.png" height= "500px" className = {styles.Sprite} style={{ marginLeft: `${x}px` }}></img>
+          {runners.map((runner) => (
+            <img className={styles.runner} src = "assets/CivilianMale.gif" height= "300px" style={runner}></img>
+          ))}
+            </div>
+
         </>
     );
 }
