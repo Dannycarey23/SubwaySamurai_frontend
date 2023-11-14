@@ -121,7 +121,7 @@ const MainContainer = () => {
         <Router>
             <Routes>
 
-                <Route path='/home' element={<HomePage character={player} updatePlayer={updatePlayer} music={music.platform}/>}/>
+                <Route path='/' element={<HomePage character={player} updatePlayer={updatePlayer} music={music.platform}/>}/>
                 <Route path='/platform1' element={<Platform1 character = {player} music={music.platform}/>}/>
                 <Route path='/room1' element={<Room1 KelvinBridgeZombie={KelvinBridgeZombie} character={player} updateRoomOneStatus={updateRoomOneStatus} music={music.fight}/>}/>
                 <Route path='/platform2' element={<Platform2 character = {player} music={music.platform}/>}/>

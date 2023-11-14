@@ -40,7 +40,6 @@ const Platform1 = ({character, music}) => {
       return ( 
         <>
         <div id="platform1div">
-          <h1>{character.name}</h1>
           <img src = "assets/KendokaV2.png" height= "500px" id = "Sprite" style={{ marginLeft: `${x}px` }}></img>
           <div className='zombieDiv'>
           <img id="zombieSprite" src = "assets/CivilianMale.gif" height= "300px"></img>

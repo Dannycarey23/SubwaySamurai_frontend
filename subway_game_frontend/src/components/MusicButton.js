@@ -16,8 +16,8 @@ const MusicButton = ({music}) => {
     return ( 
         <>
         {musicIsPlaying ?
-        <img src="assets/volume-mute.png" height= "50px" onClick={pauseMusic}/> :
-        <img src="assets/volume.png" height= "50px" onClick={playMusic}/>}</>
+        <img src="assets/volume-mute.png" height= "60px" onClick={pauseMusic}/> :
+        <img src="assets/volume.png" height= "60px" onClick={playMusic}/>}</>
         );
     }
  
