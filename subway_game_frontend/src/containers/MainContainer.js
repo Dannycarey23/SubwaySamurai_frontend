@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Howl } from "howler";
+import { Howl, Howler } from "howler";
 import HomePage from '../components/HomePage';
 import SuccessPage from '../components/SuccessPage';
 import FailurePage from '../components/FailurePage';
@@ -11,6 +11,7 @@ import Room2 from '../components/Room2';
 import Platform2 from '../components/Platform2';
 import Platform3 from '../components/Platform3';
 import Room3 from '../components/Room3';
+
 
 const playerUrl = "/players";
 const enemiesUrl = "/enemies";

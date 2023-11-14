@@ -42,7 +42,7 @@ const Platform1 = ({character, music}) => {
         <div id="platform1div">
           <h1>{character.name}</h1>
           <img src = "assets/KendokaV2.png" height= "500px" id = "Sprite" style={{ marginLeft: `${x}px` }}></img>
-          <div>
+          <div className='zombieDiv'>
           <img id="zombieSprite" src = "assets/CivilianMale.gif" height= "300px"></img>
           </div>
           <div class="bubble" contenteditable> Your player enters the subway towards the city centre as it suddenly screams to a halt at Kelvin Bridge. Faint screams and growls echo around the subway chambers. Luckily you still have your trusty bamboo sword and armour. We all know weegies can fight so don’t take the zombies lightly.
