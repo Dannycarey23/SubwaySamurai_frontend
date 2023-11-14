@@ -1,0 +1,72 @@
+.playerSprite{
+    position: absolute;
+    bottom: 0;
+    left: 10rem;
+}
+    
+.zombieSprite{
+    position: absolute;
+    right: 8rem;
+    top: 5rem;
+}
+    
+.buttonAttack{
+    position: fixed;
+    width: 10rem;
+    bottom: 5rem;
+    left: 35rem;
+    height:3.75rem;
+    background-color: yellow; /* Green */
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+.buttonAttack:active {
+    background-color: white;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+    
+.playerHealth{
+        position: absolute;
+        bottom: 5rem;
+        left: 52rem;
+        padding: 15px 32px;
+    }
+    
+progress {
+    width: 400px;
+    height: 60px;
+    background-color: white;    
+}
+
+progress {
+    text-align: center;
+  }
+  progress:after {
+    content: attr(value)'HP';
+  }
+  
+    
+progress::-webkit-progress-value { background: red; }
+    
+.enemyHealth{
+    position: absolute;
+    right: 35rem;
+    top: 10rem;
+    padding: 15px 32px;
+}
+    
+.room3div{
+    background-image: url('../../public/assets/BattleBackground.png');
+    background-repeat: no-repeat; 
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}

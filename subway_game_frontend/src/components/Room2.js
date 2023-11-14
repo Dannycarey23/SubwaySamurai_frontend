@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './room2.module.css';
-// import '../components/Room2.css';
+
 
 const Room2 = ({ BarrowlandsBallroomZombie, character, updateRoomTwoStatus, music }) => {
   const [zombieHP, setZombieHP] = useState(BarrowlandsBallroomZombie.health);
