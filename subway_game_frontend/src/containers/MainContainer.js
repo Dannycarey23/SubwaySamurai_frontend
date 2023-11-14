@@ -110,12 +110,23 @@ const MainContainer = () => {
     const music = {
         platform: new Howl({
             src: ['assets/soundtrack.mp3'],
-            loop: true
+            loop: true,
+            volume: 0.6
         }),
         fight: new Howl({
             src: ['assets/fight.mp3'],
-            loop: true
+            loop: true,
+            volume: 0.6
         })}
+
+    const sfx = {
+        playerAttack: new Howl({
+            src: ['assets/whoosh.mp3']
+        }),
+        zombieAttack: new Howl({
+            src: ['assets/growl.mp3']
+        })
+    }
     
     return (
         <Router>
@@ -123,7 +134,7 @@ const MainContainer = () => {
 
                 <Route path='/' element={<HomePage character={player} updatePlayer={updatePlayer} music={music.platform}/>}/>
                 <Route path='/platform1' element={<Platform1 character = {player} music={music.platform}/>}/>
-                <Route path='/room1' element={<Room1 KelvinBridgeZombie={KelvinBridgeZombie} character={player} updateRoomOneStatus={updateRoomOneStatus} music={music.fight}/>}/>
+                <Route path='/room1' element={<Room1 KelvinBridgeZombie={KelvinBridgeZombie} character={player} updateRoomOneStatus={updateRoomOneStatus} music={music.fight} sfx={sfx}/>}/>
                 <Route path='/platform2' element={<Platform2 character = {player} music={music.platform}/>}/>
                 <Route path='/room2' element={<Room2 BarrowlandsBallroomZombie={BarrowlandsBallroomZombie} character={player} updateRoomTwoStatus={updateRoomTwoStatus} music={music.fight}/>}/>
                 <Route path='/platform3' element={<Platform3 character = {player} music={music.platform}/>}/>
