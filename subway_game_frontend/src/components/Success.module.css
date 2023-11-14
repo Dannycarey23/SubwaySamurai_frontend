@@ -1,0 +1,49 @@
+body{
+    background-image: url('../../public/assets/successbackground.png');
+    background-repeat: no-repeat; 
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+h1, h2 {
+    text-align: center;
+    position: fixed;
+    color: white;
+    opacity: 1;
+}
+
+h2{
+    margin-top: 7rem;
+    padding-top: 0.5rem;
+    font-size: 30px;
+}
+
+
+.continueButton{
+    background-color: yellow;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 30px;
+    color: black;
+    width: 25rem;
+    height:4rem;
+    margin-top: 10rem;
+    padding: 1rem;
+    font-weight: bold;
+  }
+  
+  .continueButton:active {
+    background-color: white;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  .successPageDiv{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 30%;
+    padding-bottom: 1em;
+  }

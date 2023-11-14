@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './room1.module.css'
+import styles from './room1.module.css';
+import {Howler} from 'howler';
 // import '../components/Room1.css';
 
 const Room1 = ({ KelvinBridgeZombie, character, updateRoomOneStatus, music, sfx }) => {
@@ -32,6 +33,7 @@ const Room1 = ({ KelvinBridgeZombie, character, updateRoomOneStatus, music, sfx 
     const handleZombieAttack = () => {
       if (isCharacterAttacked && zombieHP > 0) {
         setTimeout(() => {
+          sfx.zombieAttack.play()
           const randomZombieAttackPoints = Math.floor(Math.random() * 20) + 1; 
           const newCharacterHP = characterHP - randomZombieAttackPoints;
           setCharacterHP(newCharacterHP);
@@ -45,6 +47,7 @@ const Room1 = ({ KelvinBridgeZombie, character, updateRoomOneStatus, music, sfx 
 
   useEffect(() =>{
     if(zombieHP === 0 || zombieHP < 0){
+      Howler.stop();
       Navigate('/success');
       updateRoomOneStatus(); //real url
     } else if (characterHP === 0 || characterHP < 0 ){

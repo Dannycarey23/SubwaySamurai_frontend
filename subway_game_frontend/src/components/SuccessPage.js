@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { Howler } from "howler";
+import styles from './Success.module.css'
 
-const SuccessPage = ({character, completedRoomOne, completedRoomTwo, destination, music}) => {
+const SuccessPage = ({character, completedRoomOne, completedRoomTwo, destination, sfx}) => {
 
     const Navigate = useNavigate();
 
@@ -18,13 +19,14 @@ const SuccessPage = ({character, completedRoomOne, completedRoomTwo, destination
         }
     }
 
-    return(
-        <div className="success">
-        <h1>Congratulations {character.name}!</h1>
-        <h2>You are now travelling to {destination}, hold on tight</h2>
-        <button onClick={handleClickEvent}>continue</button>
-        </div>
+    useEffect(()=>{sfx.play()}, [])
 
+    return(
+        <div className={styles.successPageDiv}>
+            <h1>Congratulations {character.name}!</h1>
+            <h2>You are now travelling to {destination}, hold on tight</h2>
+            <button className={styles.continueButton} onClick={handleClickEvent}>Continue?</button>
+        </div>
     )
 }
 

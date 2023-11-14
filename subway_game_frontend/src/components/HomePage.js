@@ -57,7 +57,7 @@ const HomePage = ({character, updatePlayer, music}) => {
         onChange={handleNameChange}
         />
         <br></br>
-        <button type="submit" name="submit" value="submit" onClick={handleSubmit}>START GAME</button>
+        <button className="startButton" type="submit" name="submit" value="submit" onClick={handleSubmit}>START GAME</button>
         </form>
         </div>
         </div> 

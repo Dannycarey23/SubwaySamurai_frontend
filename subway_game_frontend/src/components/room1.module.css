@@ -12,6 +12,7 @@
     
 .buttonAttack{
     position: fixed;
+    width: 10rem;
     bottom: 5rem;
     left: 35rem;
     height:3.75rem;
@@ -23,6 +24,7 @@
     display: inline-block;
     font-size: 35px;
     font-weight: bold;
+    font-family: 'Pixelify Sans', sans-serif;
 }
 
 .buttonAttack:active {

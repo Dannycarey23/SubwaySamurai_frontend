@@ -124,7 +124,10 @@ const MainContainer = () => {
             src: ['assets/whoosh.mp3']
         }),
         zombieAttack: new Howl({
-            src: ['assets/growl.mp3']
+            src: ['assets/bite.mp3']
+        }),
+        train: new Howl({
+            src: ['assets/train.mp3']
         })
     }
     
@@ -140,7 +143,7 @@ const MainContainer = () => {
                 <Route path='/platform3' element={<Platform3 character = {player} music={music.platform}/>}/>
                 <Route path='/room3' element={<Room3 LordProvost={LordProvost} character={player} updateRoomThreeStatus={updateRoomThreeStatus} music={music.fight}/>}/>
 
-                <Route path='/success' element={<SuccessPage character={player} completedRoomOne={completedRoomOne} completedRoomTwo={completedRoomTwo} destination={destination} music={music.fight}/>}/>
+                <Route path='/success' element={<SuccessPage character={player} completedRoomOne={completedRoomOne} completedRoomTwo={completedRoomTwo} destination={destination} sfx={sfx.train}/>}/>
                 <Route path='/failure' element={<FailurePage character={player} completedRoomOne={completedRoomOne} completedRoomTwo={completedRoomTwo} />}/>
                
                 {/* <Route path='/home' element={<HomePage/>}/>

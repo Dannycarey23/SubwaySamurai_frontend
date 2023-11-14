@@ -1,5 +1,6 @@
 import React from "react";
 import {Navigate, useNavigate} from "react-router-dom";
+import styles from './FailurePage.module.css'
 
 const FailurePage = ({character, completedRoomOne, completedRoomTwo}) => {
     const Navigate = useNavigate();
