@@ -9,6 +9,30 @@
     right: 8rem;
     top: 5rem;
 }
+
+.tigerBalm{
+    position: fixed;
+    bottom: 10rem;
+    left: 55rem;
+}
+
+.pain{
+    position: fixed;
+    bottom: 10rem;
+    left: 60rem;
+}
+
+.beer{
+    position: fixed;
+    bottom:10rem;
+    left: 65rem;
+}
+
+.whisky{
+    position: fixed;
+    bottom: 10rem;
+    left: 70rem;
+}
     
 .buttonAttack{
     position: fixed;

@@ -153,9 +153,12 @@ const MainContainer = () => {
                 <Route path='/room1' element={<Room1 KelvinBridgeZombie={KelvinBridgeZombie} character={player} updateRoomOneStatus={updateRoomOneStatus} music={music.fight} sfx={sfx} tigerBalm={tigerBalm} painKillers={painKillers} pint={pint} dram={dram}/>}/>
 
                 <Route path='/platform2' element={<Platform2 character = {player} music={music.platform}/>}/>
-                <Route path='/room2' element={<Room2 BarrowlandsBallroomZombie={BarrowlandsBallroomZombie} character={player} updateRoomTwoStatus={updateRoomTwoStatus} music={music.fight}/>}/>
+
+                <Route path='/room2' element={<Room2 BarrowlandsBallroomZombie={BarrowlandsBallroomZombie} character={player} updateRoomTwoStatus={updateRoomTwoStatus} music={music.fight} tigerBalm={tigerBalm} painKillers={painKillers} pint={pint} dram={dram}/>}/>
+
                 <Route path='/platform3' element={<Platform3 character = {player} music={music.platform}/>}/>
-                <Route path='/room3' element={<Room3 LordProvost={LordProvost} character={player} updateRoomThreeStatus={updateRoomThreeStatus} music={music.fight}/>}/>
+
+                <Route path='/room3' element={<Room3 LordProvost={LordProvost} character={player} updateRoomThreeStatus={updateRoomThreeStatus} music={music.fight} tigerBalm={tigerBalm} painKillers={painKillers} pint={pint} dram={dram}/>}/>
                
                 <Route path='/bigsuccess' element={<SuccessFinalBoss character={player} music={music.platform}/>}/>
                 <Route path='/success' element={<SuccessPage character={player} completedRoomOne={completedRoomOne} completedRoomTwo={completedRoomTwo} destination={destination} sfx={sfx.train}/>}/>
