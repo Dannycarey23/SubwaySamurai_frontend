@@ -48,7 +48,7 @@ const Platform2 = ({character, music, musicIsPlaying, toggleMusic}) => {
             </div>
           
             <div className={styles.bubble} contenteditable> 
-              <p>The coast is clear so once again you jump on the Subway praying it doesn’t break down again. But surprise, you're out of luck again . You leave the station bewildered but are met with the blinding lights of the Barrowlands. Your younger days flash back to you but you quickly refocus as you have a job to do.</p>
+              <p>The coast is clear, so you jump on the Subway praying it doesn’t break down again. But surprise, you're out of luck. You leave the station bewildered but are met with the blinding lights of the Barrowlands. Your younger days flash back to you but you quickly refocus as you have a job to do.</p>
             </div>
 
           <img src = "assets/KendokaV2.png" height= "500px" className = {styles.Sprite} style={{ marginLeft: `${x}px` }}></img> 

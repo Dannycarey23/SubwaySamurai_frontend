@@ -126,11 +126,11 @@ const Room3 = ({ LordProvost, character, updateRoomThreeStatus, music, musicIsPl
   const lordSounds = [
     new Howl({
       src: ['assets/lord.m4a'],
-      volume: 2}),
+      volume: 6}),
     
     new Howl({
       src: ['assets/lord2.m4a'],
-      volume: 2
+      volume: 6
     })
   ]
 
