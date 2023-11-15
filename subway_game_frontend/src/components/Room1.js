@@ -139,23 +139,23 @@ const Room1 = ({ KelvinBridgeZombie, character, updateRoomOneStatus, music, sfx,
           <progress className={styles.enemyHealth} value={zombieHP} max="50"></progress>
 
           {isTigerBalmUsed ? 
-          <img src="assets/TigerBalmEmpty.png" className={styles.tigerBalm} height="50px" width="50px" onClick={useTigerBalm}/> :
-           <img src="assets/TigerBalmFull.png" className={styles.tigerBalm} height="50px" width="50px" onClick={useTigerBalm}/>
+          <img src="assets/TigerBalmEmpty.png" className={styles.tigerBalm} height="60px" width="60px" onClick={useTigerBalm}/> :
+           <img src="assets/TigerBalmFull.png" className={styles.tigerBalm} height="60px" width="60px" onClick={useTigerBalm}/>
          }
 
          {ispainKillersItemUsed ?
-         <img src="assets/painkiller-inactive.png" className={styles.pain} height="50px" width="50px" onClick={usePainKillers}/> :
-         <img src="assets/painkiller-active.png" className={styles.pain} height="50px" width="50px" onClick={usePainKillers}/>
+         <img src="assets/painkiller-inactive.png" className={styles.pain} height="60px" width="60px" onClick={usePainKillers}/> :
+         <img src="assets/painkiller-active.png" className={styles.pain} height="60px" width="60px" onClick={usePainKillers}/>
          }
 
         {isPintUsed ?
-         <img src="assets/beer-inactive.png" className={styles.beer} height="50px" width="50px" onClick={usePint}/> :
-         <img src="assets/beer-active.png" className={styles.beer} height="50px" width="50px" onClick={usePint}/>
+         <img src="assets/beer-inactive.png" className={styles.beer} height="60px" width="60px" onClick={usePint}/> :
+         <img src="assets/beer-active.png" className={styles.beer} height="60px" width="60px" onClick={usePint}/>
          }
 
         {isDramUsed ?
-         <img src="assets/whisky-inactive.png" className={styles.whisky} height="50px" width="50px" onClick={useDram}/> :
-         <img src="assets/whiskey-active.png" className={styles.whisky} height="50px" width="50px" onClick={useDram}/>
+         <img src="assets/whisky-inactive.png" className={styles.whisky} height="60px" width="60px" onClick={useDram}/> :
+         <img src="assets/whiskey-active.png" className={styles.whisky} height="60px" width="60px" onClick={useDram}/>
          }
 
         </div>
