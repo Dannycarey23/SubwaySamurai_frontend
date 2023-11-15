@@ -7,7 +7,7 @@
 .zombieSprite{
     position: absolute;
     right: 15rem;
-    top: 5rem;
+    top: 0rem;
 }
     
 .buttonAttack{
@@ -36,7 +36,7 @@
 .playerHealth{
         position: absolute;
         bottom: 5rem;
-        left: 52rem;
+        left: 50rem;
         padding: 15px 32px;
     }
     
@@ -59,7 +59,7 @@ progress::-webkit-progress-value { background: red; }
 .enemyHealth{
     position: absolute;
     right: 35rem;
-    top: 10rem;
+    top: 5rem;
     padding: 15px 32px;
 }
     
