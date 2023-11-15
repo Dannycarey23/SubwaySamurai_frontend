@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './room3.module.css';
 import MusicButton from "./MusicButton";
-import {Howler} from 'howler';
+import {Howler, Howl} from 'howler';
 
 const Room3 = ({ LordProvost, character, updateRoomThreeStatus, music, musicIsPlaying, toggleMusic, sfx, tigerBalm, painKillers, pint, dram }) => {
   const [zombieHP, setZombieHP] = useState(LordProvost.health);
@@ -82,7 +82,7 @@ const Room3 = ({ LordProvost, character, updateRoomThreeStatus, music, musicIsPl
     const handleZombieAttack = () => {
       if (isCharacterAttacked && zombieHP > 0) {
         setTimeout(() => {
-          sfx.lord.play()
+          lordSounds[Math.floor(Math.random() * 2)].play();
           const randomZombieAttackPoints = Math.floor(Math.random() * 15) + 1; 
           const newCharacterHP = characterHP - randomZombieAttackPoints;
           setCharacterHP(newCharacterHP);
@@ -109,6 +109,17 @@ const Room3 = ({ LordProvost, character, updateRoomThreeStatus, music, musicIsPl
   const musicToggle = () => {
     toggleMusic()
   }
+
+  const lordSounds = [
+    new Howl({
+      src: ['assets/lord.m4a'],
+      volume: 2}),
+    
+    new Howl({
+      src: ['assets/lord2.m4a'],
+      volume: 2
+    })
+  ]
 
     return ( 
         <div className={styles.room3div}>
