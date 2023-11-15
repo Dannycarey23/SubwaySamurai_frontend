@@ -9,6 +9,7 @@
      background-size: cover;
      height: 100vh;
      width: 100vw;
+     background-position: bottom;
 } 
 .Sprite {
     position: absolute;
@@ -45,6 +46,7 @@
     text-align: center;
     color: #000;
     border: thick dashed black;
+    background: rgb(255, 255, 255, 0.6);
   }
 
   .bubble{
