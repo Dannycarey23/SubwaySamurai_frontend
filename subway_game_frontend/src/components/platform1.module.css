@@ -9,6 +9,7 @@
     background-size: cover;
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
 } 
 
 .Sprite {
@@ -20,7 +21,7 @@
 
 @keyframes run {
     0% {
-        right: -10%;
+        right: 0%;
     }
     100% {
         right: 100%;
@@ -39,7 +40,7 @@
     opacity:0.75;
     position: absolute;
     bottom: 60%;
-    right: 33%;
+    right: 30rem;
     padding: 1em;
     font-family: 'Pixelify Sans', sans-serif;
     font-size: 30px;
@@ -67,4 +68,9 @@
         opacity: 0.75;
      } 
 }
-  
+
+.musicButtonDiv{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}

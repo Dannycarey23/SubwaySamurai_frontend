@@ -1,13 +1,38 @@
 .playerSprite{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 5rem;
 }
     
 .zombieSprite{
+
     position: absolute;
     right: 12rem;
     top: 2rem;
+}
+
+.tigerBalm{
+    position: fixed;
+    bottom: 10rem;
+    left: 55rem;
+}
+
+.pain{
+    position: fixed;
+    bottom: 10rem;
+    left: 60rem;
+}
+
+.beer{
+    position: fixed;
+    bottom:10rem;
+    left: 65rem;
+}
+
+.whisky{
+    position: fixed;
+    bottom: 10rem;
+    left: 70rem;
 }
     
 .buttonAttack{
@@ -34,7 +59,7 @@
   }
     
 .playerHealth{
-        position: absolute;
+        position: fixed;
         bottom: 5rem;
         left: 40rem;
         padding: 15px 32px;
@@ -71,3 +96,8 @@ progress::-webkit-progress-value { background: red; }
     width: 100vw;
 }
     
+.musicButtonDiv{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}

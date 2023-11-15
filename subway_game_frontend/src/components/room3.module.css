@@ -9,6 +9,30 @@
     right: 5rem;
     top: 1rem;
 }
+
+.tigerBalm{
+    position: fixed;
+    bottom: 10rem;
+    left: 55rem;
+}
+
+.pain{
+    position: fixed;
+    bottom: 10rem;
+    left: 60rem;
+}
+
+.beer{
+    position: fixed;
+    bottom:10rem;
+    left: 65rem;
+}
+
+.whisky{
+    position: fixed;
+    bottom: 10rem;
+    left: 70rem;
+}
     
 .buttonAttack{
     position: fixed;
@@ -69,4 +93,10 @@ progress::-webkit-progress-value { background: red; }
     background-size: cover;
     height: 100vh;
     width: 100vw;
+}
+
+.musicButtonDiv{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
 }
