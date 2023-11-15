@@ -47,7 +47,7 @@ const Room3 = ({ LordProvost, character, updateRoomThreeStatus, music }) => {
     return ( 
         <div className={styles.room3div}>
         
-        <img src = "assets/KendokaV2.png" height= "800px" className={styles.playerSprite}/>
+        <img src = "assets/KendokaV2.png" height= "700px" className={styles.playerSprite}/>
 
         <img src = "assets/LordProvost.png" height= "500px" className= {styles.zombieSprite}/>
 
