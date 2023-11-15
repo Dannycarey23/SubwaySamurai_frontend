@@ -4,7 +4,7 @@ import MusicButton from "./MusicButton";
 import styles from './HomePage.module.css';
 // import '../components/HomePage.css';
 
-const HomePage = ({character, updatePlayer, music}) => {
+const HomePage = ({character, updatePlayer, music, musicIsPlaying, toggleMusic}) => {
 
     const [player, setPlayer] = useState(character)
 
@@ -40,11 +40,17 @@ const HomePage = ({character, updatePlayer, music}) => {
         changePage();
     }
 
+    useEffect(()=>{music.play()}, [])
+
+    const musicToggle = () => {
+        toggleMusic()
+    }
+
     
     return (
         <div className={styles.homepageDiv}>
             <div className={styles.musicButtonDiv}>
-                <MusicButton music={music}/>
+                <MusicButton musicIsPlaying={musicIsPlaying} musicToggle={musicToggle}/>
             </div>
             <div className={styles.centeredDiv}>
                 <form className={styles.form} onSubmit={handleSubmit}>

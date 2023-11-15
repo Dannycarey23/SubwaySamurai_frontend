@@ -95,3 +95,8 @@ progress::-webkit-progress-value { background: red; }
     width: 100vw;
 }
     
+.musicButtonDiv{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}

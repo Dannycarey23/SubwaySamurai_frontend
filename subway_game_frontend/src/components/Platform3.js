@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import { Navigate, redirect, useNavigate } from 'react-router-dom';
 import styles from './platform3.module.css';
+import MusicButton from "./MusicButton";
+import { Howler } from 'howler';
 
-const Platform3 = ({character, music}) => {
+const Platform3 = ({character, music, musicIsPlaying, toggleMusic}) => {
     
     const [name, setName] = useState(character.name)
     const [x, setX] = useState(0);
@@ -28,7 +30,7 @@ const Platform3 = ({character, music}) => {
       useEffect(() => {
         let newPage = '/room3'
         if (x >= window.innerWidth -450){
-          music.stop()
+          Howler.stop()
             Navigate(newPage)
       }}, [x])
 
@@ -36,8 +38,15 @@ const Platform3 = ({character, music}) => {
         music.play()
       }, [])
 
+      const musicToggle = () => {
+        toggleMusic()
+      }
+
       return ( 
         <div className={styles.platform3div}>
+                      <div className={styles.musicButtonDiv}>
+                <MusicButton musicIsPlaying={musicIsPlaying} musicToggle={musicToggle}/>
+            </div>
           <div className={styles.bubble} contenteditable>
             <p>You have chanced your luck twice so as they say, third times the charm. This time you make it 3 stops without breaking down and you make it to the glorious city centre. Before you can walk 5 feet you are greeted by the heathen also known as the Lord Provost. Half zombie half human (this is what you trained for!).</p>
           </div>

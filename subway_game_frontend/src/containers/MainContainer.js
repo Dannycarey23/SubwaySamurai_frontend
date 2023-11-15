@@ -31,6 +31,8 @@ const MainContainer = () => {
     const [completedRoomTwo, setCompletedRoomTwo] = useState(false);
     const [completedRoomThree, setCompletedRoomThree] = useState(false);
 
+    const [musicIsPlaying, setMusicIsPlaying] = useState(true)
+
     const updateRoomOneStatus = () => {
         setCompletedRoomOne(true);
         setDestination("Barrowlands")
@@ -63,19 +65,19 @@ const MainContainer = () => {
         .then(res=>res.json())
         .then(data=>setHealthItems(data))
 
-        function controlSound(e) {
-            if (e.keyCode === 77) {
-              Howler.mute(true);
-            } else if (e.keyCode === 85) {
-                Howler.mute(false);
-            }
+        // function controlSound(e) {
+        //     if (e.keyCode === 77) {
+        //       Howler.mute(true);
+        //     } else if (e.keyCode === 85) {
+        //         Howler.mute(false);
+        //     }
     
-            }
-            document.addEventListener('keydown', controlSound);
+        //     }
+        //     document.addEventListener('keydown', controlSound);
         
-            return () => {
-              document.removeEventListener('keydown', controlSound);
-            };
+        //     return () => {
+        //       document.removeEventListener('keydown', controlSound);
+        //     };
         }, [])
 
     
@@ -119,12 +121,12 @@ const MainContainer = () => {
         platform: new Howl({
             src: ['assets/soundtrack.mp3'],
             loop: true,
-            volume: 0.6
+            volume: 0.4
         }),
         fight: new Howl({
             src: ['assets/fight.mp3'],
             loop: true,
-            volume: 0.6
+            volume: 0.4
         })}
 
     const sfx = {
@@ -140,25 +142,39 @@ const MainContainer = () => {
         gameOver: new Howl({
             src: ['assets/gameover.mp3'],
             loop: true
+        }),
+        lord: new Howl({
+            src: ['assets/lord.m4a'],
+            volume: 2
+    
         })
+    }
+
+    const toggleMusic = () => {
+        if (musicIsPlaying) {
+            setMusicIsPlaying(false)
+        }
+        else{
+            setMusicIsPlaying(true)
+        }
     }
     
     return (
         <Router>
             <Routes>
 
-                <Route path='/' element={<HomePage character={player} updatePlayer={updatePlayer} music={music.platform}/>}/>
-                <Route path='/platform1' element={<Platform1 character = {player} music={music.platform}/>}/>
+                <Route path='/' element={<HomePage character={player} updatePlayer={updatePlayer} music={music.platform} musicIsPlaying={musicIsPlaying} toggleMusic={toggleMusic}/>}/>
+                <Route path='/platform1' element={<Platform1 character = {player} music={music.platform} musicIsPlaying={musicIsPlaying} toggleMusic={toggleMusic}/>}/>
 
-                <Route path='/room1' element={<Room1 KelvinBridgeZombie={KelvinBridgeZombie} character={player} updateRoomOneStatus={updateRoomOneStatus} music={music.fight} sfx={sfx} tigerBalm={tigerBalm} painKillers={painKillers} pint={pint} dram={dram}/>}/>
+                <Route path='/room1' element={<Room1 KelvinBridgeZombie={KelvinBridgeZombie} character={player} updateRoomOneStatus={updateRoomOneStatus} music={music.fight} sfx={sfx} toggleMusic={toggleMusic} musicIsPlaying={musicIsPlaying} tigerBalm={tigerBalm} painKillers={painKillers} pint={pint} dram={dram}/>}/>
 
-                <Route path='/platform2' element={<Platform2 character = {player} music={music.platform}/>}/>
+                <Route path='/platform2' element={<Platform2 character = {player} music={music.platform} toggleMusic={toggleMusic} musicIsPlaying={musicIsPlaying}/>}/>
 
-                <Route path='/room2' element={<Room2 BarrowlandsBallroomZombie={BarrowlandsBallroomZombie} character={player} updateRoomTwoStatus={updateRoomTwoStatus} music={music.fight} tigerBalm={tigerBalm} painKillers={painKillers} pint={pint} dram={dram}/>}/>
+                <Route path='/room2' element={<Room2 BarrowlandsBallroomZombie={BarrowlandsBallroomZombie} character={player} updateRoomTwoStatus={updateRoomTwoStatus} music={music.fight} sfx={sfx} toggleMusic={toggleMusic} musicIsPlaying={musicIsPlaying} tigerBalm={tigerBalm} painKillers={painKillers} pint={pint} dram={dram}/>}/>
 
-                <Route path='/platform3' element={<Platform3 character = {player} music={music.platform}/>}/>
+                <Route path='/platform3' element={<Platform3 character = {player} music={music.platform} musicIsPlaying={musicIsPlaying} toggleMusic={toggleMusic}/>}/>
 
-                <Route path='/room3' element={<Room3 LordProvost={LordProvost} character={player} updateRoomThreeStatus={updateRoomThreeStatus} music={music.fight} tigerBalm={tigerBalm} painKillers={painKillers} pint={pint} dram={dram}/>}/>
+                <Route path='/room3' element={<Room3 LordProvost={LordProvost} character={player} updateRoomThreeStatus={updateRoomThreeStatus} music={music.fight} sfx={sfx} toggleMusic={toggleMusic} musicIsPlaying={musicIsPlaying} tigerBalm={tigerBalm} painKillers={painKillers} pint={pint} dram={dram}/>}/>
                
                 <Route path='/bigsuccess' element={<SuccessFinalBoss character={player} music={music.platform}/>}/>
                 <Route path='/success' element={<SuccessPage character={player} completedRoomOne={completedRoomOne} completedRoomTwo={completedRoomTwo} destination={destination} sfx={sfx.train}/>}/>
