@@ -74,7 +74,7 @@ const Room2 = ({ BarrowlandsBallroomZombie, character, updateRoomTwoStatus, musi
   const handleAttackClick = () => {
     setTimeout(() => {
       sfx.playerAttack.play()
-      const randomCharacterAttackPoints = Math.floor(Math.random() * 15) + 1; 
+      const randomCharacterAttackPoints = Math.floor(Math.random() * 10) + 1; 
       const newZombieHP = zombieHP - randomCharacterAttackPoints;
       setZombieHP(newZombieHP);
       setIsCharacterAttacked(true); 
@@ -98,7 +98,7 @@ const Room2 = ({ BarrowlandsBallroomZombie, character, updateRoomTwoStatus, musi
       if (isCharacterAttacked && zombieHP > 0) {
         setTimeout(() => {
           sfx.zombieAttack.play()
-          const randomZombieAttackPoints = Math.floor(Math.random() * 20) + 1; 
+          const randomZombieAttackPoints = Math.floor(Math.random() * 25) + 1; 
           const newCharacterHP = characterHP - randomZombieAttackPoints;
           setCharacterHP(newCharacterHP);
           setIsCharacterAttacked(false); 

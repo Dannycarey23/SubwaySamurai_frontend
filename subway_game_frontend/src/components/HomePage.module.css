@@ -39,6 +39,11 @@
     opacity: 0.9;
   }
 
+.subtitle {
+    font-size: 65px;
+    margin-top: -55px;
+  }
+
 .startButton{
     background-color: yellow;
     margin-top: 1.5rem;

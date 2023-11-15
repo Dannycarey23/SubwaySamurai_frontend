@@ -42,6 +42,7 @@ const HomePage = ({character, updatePlayer, music, musicIsPlaying, toggleMusic})
             <div className={styles.centeredDiv}>
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <h1 className={styles.title}>SUBWAY SAMURAI</h1>
+                    <p className={styles.subtitle}>The Provost Awakens</p>
                     <label htmlFor='name'></label>
                     <input 
                         type='text'
