@@ -1,13 +1,37 @@
 .playerSprite{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 10rem;
 }
     
 .zombieSprite{
-    position: absolute;
+    position: fixed;
     right: 0.1rem;
-    top: -4rem;
+    top: -5rem;
+}
+
+.tigerBalm{
+    position: fixed;
+    bottom: 10rem;
+    left: 55rem;
+}
+
+.pain{
+    position: fixed;
+    bottom: 10rem;
+    left: 60rem;
+}
+
+.beer{
+    position: fixed;
+    bottom:10rem;
+    left: 65rem;
+}
+
+.whisky{
+    position: fixed;
+    bottom: 10rem;
+    left: 70rem;
 }
     
 .buttonAttack{
@@ -34,7 +58,7 @@
   }
     
 .playerHealth{
-        position: absolute;
+        position: fixed;
         bottom: 5rem;
         left: 52rem;
         padding: 15px 32px;

@@ -17,11 +17,13 @@ import SuccessFinalBoss from '../components/SuccessFinalBoss';
 const playerUrl = "/players";
 const enemiesUrl = "/enemies";
 const roomsUrl = "/rooms";
+const healthUrl = "/healthItems"
 
 const MainContainer = () => {
     const [enemies, setEnemies] = useState([]);
     const [player, setPlayer] = useState({});
     const [rooms, setRooms] = useState([]);  
+    const [healthItems, setHealthItems] = useState([]);
     const [destination, setDestination] = useState("");
     
     //levelChecks
@@ -57,6 +59,10 @@ const MainContainer = () => {
         .then(res=>res.json())
         .then(data=>setRooms(data))
 
+        fetch(healthUrl)
+        .then(res=>res.json())
+        .then(data=>setHealthItems(data))
+
         function controlSound(e) {
             if (e.keyCode === 77) {
               Howler.mute(true);
@@ -78,14 +84,15 @@ const MainContainer = () => {
         return <h1>Loading...</h1>
     }
 
-    
-    
-    // const character = player[0];
-    // console.log({characterInMain: character});
-
     const KelvinBridgeZombie = enemies[0];
     const BarrowlandsBallroomZombie = enemies[1];
     const LordProvost = enemies[2];
+
+    //healthitems
+    const tigerBalm = healthItems[0];
+    const painKillers = healthItems[1];
+    const pint = healthItems[2];
+    const dram = healthItems[3];
   
 
     const updatePlayer = (character) => {
@@ -142,7 +149,9 @@ const MainContainer = () => {
 
                 <Route path='/' element={<HomePage character={player} updatePlayer={updatePlayer} music={music.platform}/>}/>
                 <Route path='/platform1' element={<Platform1 character = {player} music={music.platform}/>}/>
-                <Route path='/room1' element={<Room1 KelvinBridgeZombie={KelvinBridgeZombie} character={player} updateRoomOneStatus={updateRoomOneStatus} music={music.fight} sfx={sfx}/>}/>
+
+                <Route path='/room1' element={<Room1 KelvinBridgeZombie={KelvinBridgeZombie} character={player} updateRoomOneStatus={updateRoomOneStatus} music={music.fight} sfx={sfx} tigerBalm={tigerBalm} painKillers={painKillers} pint={pint} dram={dram}/>}/>
+
                 <Route path='/platform2' element={<Platform2 character = {player} music={music.platform}/>}/>
                 <Route path='/room2' element={<Room2 BarrowlandsBallroomZombie={BarrowlandsBallroomZombie} character={player} updateRoomTwoStatus={updateRoomTwoStatus} music={music.fight}/>}/>
                 <Route path='/platform3' element={<Platform3 character = {player} music={music.platform}/>}/>
