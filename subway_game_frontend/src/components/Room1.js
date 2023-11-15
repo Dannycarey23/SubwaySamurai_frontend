@@ -123,12 +123,14 @@ const Room1 = ({ KelvinBridgeZombie, character, updateRoomOneStatus, music, sfx,
 
     return ( 
         <div className={styles.room1div}>
+
                       <div className={styles.musicButtonDiv}>
                 <MusicButton musicIsPlaying={musicIsPlaying} musicToggle={musicToggle}/>
             </div>
-          <img src = "assets/KendokaV2.png" height= "800px" className={styles.playerSprite}/>
+          <img src = "assets/KendokaV2.png" height= "650px" className={styles.playerSprite}/>
 
-          <img src = "assets/ZOMBIE.png" height= "600px" className={styles.zombieSprite}/>
+          <img src = "assets/ZOMBIE.png" height= "500px" className={styles.zombieSprite}/>
+
 
           <button className={styles.buttonAttack} onClick={handleAttackClick}>ATTACK</button>
 

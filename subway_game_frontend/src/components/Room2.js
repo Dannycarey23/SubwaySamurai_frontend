@@ -124,12 +124,14 @@ const Room2 = ({ BarrowlandsBallroomZombie, character, updateRoomTwoStatus, musi
 
     return ( 
         <div className={styles.room2div}>
+
                       <div className={styles.musicButtonDiv}>
                 <MusicButton musicIsPlaying={musicIsPlaying} musicToggle={musicToggle}/>
             </div>
-         <img src = "assets/KendokaV2.png" height= "800px" className={styles.playerSprite}/>
+         <img src = "assets/KendokaV2.png" height= "750px" className={styles.playerSprite}/>
 
-          <img src = "assets/BBZombie.png" height= "500px" className= {styles.zombieSprite}/>
+
+          <img src = "assets/BBZombie.png" height= "550px" className= {styles.zombieSprite}/>
 
           <button className={styles.buttonAttack}  onClick={handleAttackClick}>ATTACK</button>
 

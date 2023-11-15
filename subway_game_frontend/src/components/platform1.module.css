@@ -38,7 +38,7 @@
 
 .bubble {
     opacity:0.75;
-    position: fixed;
+    position: absolute;
     bottom: 60%;
     right: 30rem;
     padding: 1em;
@@ -65,7 +65,7 @@
         opacity: 0;
     }
     100% {
-        opacity: 1;
+        opacity: 0.75;
      } 
 }
 

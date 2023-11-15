@@ -1,13 +1,13 @@
 .playerSprite{
     position: absolute;
     bottom: 0;
-    left: 10rem;
+    left: 8rem;
 }
     
 .zombieSprite{
     position: absolute;
-    right: 8rem;
-    top: 5rem;
+    right: 5rem;
+    top: 1rem;
 }
 
 .tigerBalm{
@@ -38,7 +38,7 @@
     position: fixed;
     width: 10rem;
     bottom: 5rem;
-    left: 35rem;
+    left: 30rem;
     height:3.75rem;
     background-color: yellow; /* Green */
     border: none;
@@ -60,7 +60,7 @@
 .playerHealth{
         position: absolute;
         bottom: 5rem;
-        left: 52rem;
+        left: 45rem;
         padding: 15px 32px;
     }
     
@@ -83,7 +83,7 @@ progress::-webkit-progress-value { background: red; }
 .enemyHealth{
     position: absolute;
     right: 35rem;
-    top: 10rem;
+    top: 5rem;
     padding: 15px 32px;
 }
     

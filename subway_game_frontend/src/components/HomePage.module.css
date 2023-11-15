@@ -11,10 +11,10 @@
 }
 
 .form {
-    caret: black underscore;
     padding: 20px;
     border-radius: 8px;
     color: #fff;
+    
 }
 
 .form ::placeholder {
@@ -34,9 +34,9 @@
 }
 
 .title {
-    margin-top: 0;
+    margin-top:  0;
     font-size: 110px;
-    opacity: 1;
+    opacity: 0.6;
   }
 
 .startButton{
