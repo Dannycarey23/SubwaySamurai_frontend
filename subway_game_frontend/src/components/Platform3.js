@@ -48,10 +48,11 @@ const Platform3 = ({character, music, musicIsPlaying, toggleMusic}) => {
                 <MusicButton musicIsPlaying={musicIsPlaying} musicToggle={musicToggle}/>
             </div>
           <div className={styles.bubble} contenteditable>
-            <p>You have chanced your luck twice so as they say, third times the charm. This time you make it 3 stops without breaking down and you make it to the glorious city centre. Before you can walk 5 feet you are greeted by the heathen also known as the Lord Provost. Half zombie half human (this is what you trained for!).</p>
+            <p>You have chanced your luck twice so, as they say, third time's the charm. This time you make it 3 stops without breaking down and you make it to the glorious city centre. Before you can walk five feet you are greeted by the heathen also known as the Lord Provost. Half zombie half human (this is what you trained for!)</p>
           </div>
 
           <img src = "assets/KendokaV2.png" height= "500px" className={styles.Sprite} style={{ marginLeft: `${x}px` }}></img>
+          <img src = "assets/SittingProvost.png" height= "500px" className={styles.zombieSprite} style={{ marginLeft: `${x}px` }}></img>
         
         </div>
 
