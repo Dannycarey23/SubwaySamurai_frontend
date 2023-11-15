@@ -29,14 +29,14 @@
 
 .runner {
     position: absolute;
-    bottom: 3.5rem;
+    bottom: 1.5rem;
     animation: linear infinite;
     animation-name: run;
     animation-duration: 5s;
 } 
 
 .bubble {
-    opacity:0.75;
+    opacity:1;
     position: fixed;
     bottom: 60%;
     right: 33%;
@@ -64,7 +64,7 @@
         opacity: 0;
     }
     100% {
-        opacity: 1;
+        opacity: 0.75;
      } 
 }
   
