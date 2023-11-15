@@ -72,7 +72,7 @@ const Room3 = ({ LordProvost, character, updateRoomThreeStatus, music, musicIsPl
   const handleAttackClick = () => {
     setTimeout(() => {
       sfx.playerAttack.play()
-      const randomCharacterAttackPoints = Math.floor(Math.random() * 10) + 1; 
+      const randomCharacterAttackPoints = Math.floor(Math.random() * 13) + 1; 
       const newZombieHP = zombieHP - randomCharacterAttackPoints;
       setZombieHP(newZombieHP);
       setIsCharacterAttacked(true); 
