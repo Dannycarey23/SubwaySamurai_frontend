@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { Navigate, redirect, useNavigate } from 'react-router-dom';
-// import characterOne from 'assets/characterOne.png';
 import styles from './platform2.module.css'
-//import '../components/Platform2.css';
+import { Howler } from 'howler';
   
 
 const Platform2 = ({character, music}) => {
@@ -32,10 +31,10 @@ const Platform2 = ({character, music}) => {
 
       useEffect(() => {
         let newPage = '/room2'
-        if (x >= window.innerWidth){
-          music.stop()
-            Navigate(newPage)
-      }}, [x])
+        if(x >= window.innerWidth -450){
+          Howler.stop()
+          Navigate(newPage)
+        }}, [x])
 
       useEffect(()=>{
         music.play()
@@ -48,10 +47,10 @@ const Platform2 = ({character, music}) => {
             <p>The coast is clear so once again you jump on the Subway praying it doesn’t break down again. But surprise, your out of luck again . You leave the station bewildered but are met with the blinding lights of the Barrowlands. Your younger days flash back to you but you quickly refocus as you have a job to do.</p>
           </div>
 
-          <img src = "assets/KendokaV2.png" height= "500px" id = "Sprite" style={{ marginLeft: `${x}px` }}></img> 
+          <img src = "assets/KendokaV2.png" height= "500px" className = {styles.Sprite} style={{ marginLeft: `${x}px` }}></img> 
           
           <div className={styles.zombieDiv}>
-            <img src = "assets/ZOMBIE.png" height= "300px"/>
+            <img src = "assets/ZOMBIE.png" height= "300px" className={styles.bbZombie}/>
           </div>
         </div>
     );

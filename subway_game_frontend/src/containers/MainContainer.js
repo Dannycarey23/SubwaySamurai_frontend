@@ -11,6 +11,7 @@ import Room2 from '../components/Room2';
 import Platform2 from '../components/Platform2';
 import Platform3 from '../components/Platform3';
 import Room3 from '../components/Room3';
+import SuccessFinalBoss from '../components/SuccessFinalBoss';
 
 
 const playerUrl = "/players";
@@ -146,7 +147,8 @@ const MainContainer = () => {
                 <Route path='/room2' element={<Room2 BarrowlandsBallroomZombie={BarrowlandsBallroomZombie} character={player} updateRoomTwoStatus={updateRoomTwoStatus} music={music.fight}/>}/>
                 <Route path='/platform3' element={<Platform3 character = {player} music={music.platform}/>}/>
                 <Route path='/room3' element={<Room3 LordProvost={LordProvost} character={player} updateRoomThreeStatus={updateRoomThreeStatus} music={music.fight}/>}/>
-
+               
+                <Route path='/bigsuccess' element={<SuccessFinalBoss character={player} music={music.platform}/>}/>
                 <Route path='/success' element={<SuccessPage character={player} completedRoomOne={completedRoomOne} completedRoomTwo={completedRoomTwo} destination={destination} sfx={sfx.train}/>}/>
                 <Route path='/failure' element={<FailurePage character={player} completedRoomOne={completedRoomOne} completedRoomTwo={completedRoomTwo} sfx={sfx.gameOver}/>}/>
                

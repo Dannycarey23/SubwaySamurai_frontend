@@ -1,0 +1,19 @@
+.successDiv{
+    margin-top: 10rem;
+    position: flex;
+}
+
+.successTitle{
+    text-align: center;
+}
+
+.successParagraph{
+    text-align: center;
+    font-size: 40px;
+}
+
+.map{
+    margin-top: 5rem;
+    position: fixed;
+    left:30%;
+}

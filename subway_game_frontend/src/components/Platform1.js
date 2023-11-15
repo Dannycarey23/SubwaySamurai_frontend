@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import { Howler } from 'howler';
 import { Navigate, redirect, useNavigate } from 'react-router-dom';
 import styles from './platform1.module.css'
-// import '../components/Platform1.css';
   
 const runners = [];
 

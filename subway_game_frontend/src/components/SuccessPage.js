@@ -9,10 +9,10 @@ const SuccessPage = ({character, completedRoomOne, completedRoomTwo, destination
 
     const handleClickEvent = () => {
         Howler.stop()
-        if (completedRoomOne == true){
-            Navigate('/platform2')
-        } else if (completedRoomTwo == true){
+        if (completedRoomTwo == true){
             Navigate('/platform3')
+        } else if (completedRoomOne == true){
+            Navigate('/platform2')
         }
         else {
             Navigate('/platform1')
