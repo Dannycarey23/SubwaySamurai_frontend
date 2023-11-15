@@ -18,12 +18,7 @@ for (let i = 0; i < runnersCount; i++) {
 
 const Platform1 = ({character, musicIsPlaying, toggleMusic}) => {
     
-    // const [name, setName] = useState(character.name)
     const [x, setX] = useState(0);
-    console.log({character});
-  
-    
-    
     const Navigate = useNavigate();
 
     useEffect(() => {
@@ -55,20 +50,19 @@ const Platform1 = ({character, musicIsPlaying, toggleMusic}) => {
       
       return ( 
         <>
-        <div className={styles.platform1div}>
-            <div className={styles.musicButtonDiv}>
-                <MusicButton musicIsPlaying={musicIsPlaying} musicToggle={musicToggle}/>
-            </div>
+          <div className={styles.platform1div}>
+              <div className={styles.musicButtonDiv}>
+                  <MusicButton musicIsPlaying={musicIsPlaying} musicToggle={musicToggle}/>
+              </div>
           <div className={styles.bubble} contenteditable> 
             <p>{character.name} enters the subway towards the city centre as it suddenly screams to a halt at Kelvin Bridge. Faint screams and growls echo around the subway chambers. Luckily you still have your trusty bamboo sword and armour. We all know weegies can fight so don’t take the zombies lightly.</p>
           </div>
           <div>
-          <img src = "assets/KendokaV2.png" height= "500px" className = {styles.Sprite} style={{ left: `${x}px` }}></img> </div>
-          {runners.map((runner) => (
+            <img src = "assets/KendokaV2.png" height= "500px" className = {styles.Sprite} style={{ left: `${x}px` }}></img> </div>
+            {runners.map((runner) => (
             <img className={styles.runner} src = "assets/CivilianMale.gif" height= "300px" style={runner}></img>
-          ))}
-            </div>
-
+            ))}
+          </div>
         </>
     );
 }

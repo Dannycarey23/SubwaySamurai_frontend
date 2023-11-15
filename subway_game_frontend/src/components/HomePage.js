@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import { Navigate, redirect, useNavigate } from "react-router-dom";
 import MusicButton from "./MusicButton";
 import styles from './HomePage.module.css';
-// import '../components/HomePage.css';
 
 const HomePage = ({character, updatePlayer, music, musicIsPlaying, toggleMusic}) => {
 
@@ -10,24 +9,12 @@ const HomePage = ({character, updatePlayer, music, musicIsPlaying, toggleMusic})
 
     const Navigate = useNavigate()
 
-    // useEffect(() => {
-    //     function updateNameAndStartGame(){
-    //         handleNameChange()
-    //         handleSubmit()
-    //         changePage()
-    //     }
-    // }, [])
-
     const changePage = () => {
         let newPage = '/platform1'
         Navigate(newPage)
     }
-    
-    // console.log({ name });
 
     const handleNameChange = (ev) => setPlayer({...player, name: ev.target.value})
-    // console.log({name}); //added comment to console log name
-    
 
     const handleSubmit = ev => {
         ev.preventDefault();

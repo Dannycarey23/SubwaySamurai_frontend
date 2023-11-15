@@ -36,9 +36,9 @@
     
 .buttonAttack{
     position: fixed;
-    width: 10rem;
+    width: 11rem;
     bottom: 5rem;
-    left: 35rem;
+    left: 27rem;
     height:3.75rem;
     background-color: yellow; /* Green */
     border: none;
@@ -50,6 +50,46 @@
     font-weight: bold;
     font-family: 'Pixelify Sans', sans-serif;
 }
+
+.buttonAttack2{
+    position: fixed;
+    width: 11rem;
+    bottom: 10rem;
+    left: 27rem;
+    height:6rem;
+    background-color: yellow; /* Green */
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+.buttonAttackDisabled{
+    position: fixed;
+    width: 11rem;
+    bottom: 10rem;
+    left: 27rem;
+    height:6rem;
+    background-color: grey; /* Green */
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Pixelify Sans', sans-serif; 
+}
+
+.buttonAttack2:active {
+    background-color: white;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
 
 .buttonAttack:active {
     background-color: white;

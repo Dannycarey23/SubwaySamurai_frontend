@@ -7,7 +7,8 @@ import MusicButton from "./MusicButton";
 const Room1 = ({ KelvinBridgeZombie, character, updateRoomOneStatus, music, sfx, musicIsPlaying, toggleMusic, tigerBalm, painKillers, pint, dram }) => {
   const [zombieHP, setZombieHP] = useState(KelvinBridgeZombie.health);
   const [characterHP, setCharacterHP] = useState(character.health);
-  const [isCharacterAttacked, setIsCharacterAttacked] = useState(false); //good idea
+  const [isCharacterAttacked, setIsCharacterAttacked] = useState(false);
+  const [isBigAttackUsed, setIsBigAttackedUsed] = useState(false);
 
   const [TigerBalmItem, setTigerBalmItem] = useState(tigerBalm.healthPoints);
   const [isTigerBalmUsed, setIsTigerBalmUsed] = useState(false);
@@ -77,15 +78,19 @@ const Room1 = ({ KelvinBridgeZombie, character, updateRoomOneStatus, music, sfx,
       setZombieHP(newZombieHP);
       setIsCharacterAttacked(true); 
     }, 1000);
-  }; //Mark was here
+  };
 
-  // const handleAttackClick = () => {
-  //   setTimeout(() => {
-  //     const newZombieHP = zombieHP - character.attackPoints;
-  //     setZombieHP(newZombieHP);
-  //     setIsCharacterAttacked(true); // Signal that character attack is completed
-  //   }, 1000);
-  // }; OLD CODE
+  const handleBigAttackClick = () => {
+    setTimeout(() => {
+      sfx.playerAttack.play();
+      if(isBigAttackUsed == false){
+      const randomCharacterAttackPoints = Math.floor(Math.random() * 30 ) + 5;
+      const newZombieHP = zombieHP - randomCharacterAttackPoints;
+      setZombieHP(newZombieHP);
+      setIsCharacterAttacked(true);
+      setIsBigAttackedUsed(true);}
+    }, 1000);
+  }
 
   useEffect(() => {
     const handleZombieAttack = () => {
@@ -133,6 +138,8 @@ const Room1 = ({ KelvinBridgeZombie, character, updateRoomOneStatus, music, sfx,
 
 
           <button className={styles.buttonAttack} onClick={handleAttackClick}>ATTACK</button>
+
+          <button className={isBigAttackUsed ? styles.buttonAttackDisabled : styles.buttonAttack2} onClick={handleBigAttackClick}>MEGA ATTACK</button>
 
           <progress className={styles.playerHealth} value={characterHP} max="100"></progress>
 

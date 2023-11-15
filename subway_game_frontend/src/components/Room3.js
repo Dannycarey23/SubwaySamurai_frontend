@@ -7,7 +7,8 @@ import {Howler, Howl} from 'howler';
 const Room3 = ({ LordProvost, character, updateRoomThreeStatus, music, musicIsPlaying, toggleMusic, sfx, tigerBalm, painKillers, pint, dram }) => {
   const [zombieHP, setZombieHP] = useState(LordProvost.health);
   const [characterHP, setCharacterHP] = useState(character.health);
-  const [isCharacterAttacked, setIsCharacterAttacked] = useState(false); //good idea
+  const [isCharacterAttacked, setIsCharacterAttacked] = useState(false);
+  const [isBigAttackUsed, setIsBigAttackedUsed] = useState(false);
 
   const [TigerBalmItem, setTigerBalmItem] = useState(tigerBalm.healthPoints);
   const [isTigerBalmUsed, setIsTigerBalmUsed] = useState(false);
@@ -78,6 +79,18 @@ const Room3 = ({ LordProvost, character, updateRoomThreeStatus, music, musicIsPl
     }, 1000);
   };
 
+  const handleBigAttackClick = () => {
+    setTimeout(() => {
+      sfx.playerAttack.play();
+      if(isBigAttackUsed == false){
+      const randomCharacterAttackPoints = Math.floor(Math.random() * 30 ) + 5;
+      const newZombieHP = zombieHP - randomCharacterAttackPoints;
+      setZombieHP(newZombieHP);
+      setIsCharacterAttacked(true);
+      setIsBigAttackedUsed(true);}
+    }, 1000);
+  }
+
   useEffect(() => {
     const handleZombieAttack = () => {
       if (isCharacterAttacked && zombieHP > 0) {
@@ -97,10 +110,10 @@ const Room3 = ({ LordProvost, character, updateRoomThreeStatus, music, musicIsPl
   useEffect(() =>{
     if(zombieHP === 0 || zombieHP < 0){
       Navigate('/bigsuccess');
-      updateRoomThreeStatus(); //real url
+      updateRoomThreeStatus(); 
     } else if (characterHP === 0 || characterHP < 0 ){
       Howler.stop();
-      Navigate('/failure') //real url
+      Navigate('/failure') 
     }
   })
 
@@ -132,6 +145,8 @@ const Room3 = ({ LordProvost, character, updateRoomThreeStatus, music, musicIsPl
         <img src = "assets/LordProvost.png" height= "500px" className= {styles.zombieSprite}/>
 
         <button className={styles.buttonAttack} onClick={handleAttackClick}>ATTACK</button>
+
+        <button className={isBigAttackUsed ? styles.buttonAttackDisabled : styles.buttonAttack2} onClick={handleBigAttackClick}>MEGA ATTACK</button>
 
         <progress className={styles.playerHealth} value={characterHP} max="100"></progress>
         

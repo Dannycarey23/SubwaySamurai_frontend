@@ -26,7 +26,6 @@ const MainContainer = () => {
     const [healthItems, setHealthItems] = useState([]);
     const [destination, setDestination] = useState("");
     
-    //levelChecks
     const [completedRoomOne, setCompletedRoomOne] = useState(false);
     const [completedRoomTwo, setCompletedRoomTwo] = useState(false);
     const [completedRoomThree, setCompletedRoomThree] = useState(false);
@@ -40,13 +39,12 @@ const MainContainer = () => {
 
     const updateRoomTwoStatus = () => {
         setCompletedRoomTwo(true);
-        setDestination("Buchannan Street")
+        setDestination("Buchanan Street")
     }
 
     const updateRoomThreeStatus = () => {
         setCompletedRoomThree(true);
     }
-
 
     useEffect(()=>{
         fetch(playerUrl)
@@ -90,7 +88,6 @@ const MainContainer = () => {
     const BarrowlandsBallroomZombie = enemies[1];
     const LordProvost = enemies[2];
 
-    //healthitems
     const tigerBalm = healthItems[0];
     const painKillers = healthItems[1];
     const pint = healthItems[2];
@@ -179,9 +176,6 @@ const MainContainer = () => {
                 <Route path='/bigsuccess' element={<SuccessFinalBoss character={player} music={music.platform}/>}/>
                 <Route path='/success' element={<SuccessPage character={player} completedRoomOne={completedRoomOne} completedRoomTwo={completedRoomTwo} destination={destination} sfx={sfx.train}/>}/>
                 <Route path='/failure' element={<FailurePage character={player} completedRoomOne={completedRoomOne} completedRoomTwo={completedRoomTwo} sfx={sfx.gameOver}/>}/>
-               
-                {/* <Route path='/home' element={<HomePage/>}/>
-                <Route path='/home' element={<HomePage/>}/> */}
 
             </Routes>
         </Router>

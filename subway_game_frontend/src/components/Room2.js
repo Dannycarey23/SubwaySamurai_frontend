@@ -9,7 +9,8 @@ const Room2 = ({ BarrowlandsBallroomZombie, character, updateRoomTwoStatus, musi
   const [zombieHP, setZombieHP] = useState(BarrowlandsBallroomZombie.health);
 
   const [characterHP, setCharacterHP] = useState(character.health);
-  const [isCharacterAttacked, setIsCharacterAttacked] = useState(false); //good idea
+  const [isCharacterAttacked, setIsCharacterAttacked] = useState(false);
+  const [isBigAttackUsed, setIsBigAttackedUsed] = useState(false);
 
   const [TigerBalmItem, setTigerBalmItem] = useState(tigerBalm.healthPoints);
   const [isTigerBalmUsed, setIsTigerBalmUsed] = useState(false);
@@ -79,14 +80,18 @@ const Room2 = ({ BarrowlandsBallroomZombie, character, updateRoomTwoStatus, musi
       setIsCharacterAttacked(true); 
     }, 1000);
   };
-  //MARK WAS HERE
-  // const handleAttackClick = () => {
-  //   setTimeout(() => {
-  //     const newZombieHP = zombieHP - character.attackPoints;
-  //     setZombieHP(newZombieHP);
-  //     setIsCharacterAttacked(true); // Signal that character attack is completed
-  //   }, 1000);
-  // };OLD CODE
+
+  const handleBigAttackClick = () => {
+    setTimeout(() => {
+      sfx.playerAttack.play();
+      if(isBigAttackUsed == false){
+      const randomCharacterAttackPoints = Math.floor(Math.random() * 30 ) + 5;
+      const newZombieHP = zombieHP - randomCharacterAttackPoints;
+      setZombieHP(newZombieHP);
+      setIsCharacterAttacked(true);
+      setIsBigAttackedUsed(true);}
+    }, 1000);
+  }
 
   useEffect(() => {
     const handleZombieAttack = () => {
@@ -108,10 +113,10 @@ const Room2 = ({ BarrowlandsBallroomZombie, character, updateRoomTwoStatus, musi
     if(zombieHP === 0 || zombieHP < 0){
       Howler.stop();
       Navigate('/success');
-      updateRoomTwoStatus(); //real url
+      updateRoomTwoStatus();
     } else if (characterHP === 0 || characterHP < 0 ){
       Howler.stop();
-      Navigate('/failure') //real url
+      Navigate('/failure') 
     }
   })
 
@@ -135,6 +140,8 @@ const Room2 = ({ BarrowlandsBallroomZombie, character, updateRoomTwoStatus, musi
 
           <button className={styles.buttonAttack}  onClick={handleAttackClick}>ATTACK</button>
 
+          <button className={isBigAttackUsed ? styles.buttonAttackDisabled : styles.buttonAttack2} onClick={handleBigAttackClick}>MEGA ATTACK</button>
+          
           <progress className={styles.playerHealth}  value={characterHP} max="100"> </progress>
 
          <progress className={styles.enemyHealth}  value={zombieHP} max="75"> </progress>

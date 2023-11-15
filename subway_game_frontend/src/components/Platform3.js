@@ -18,10 +18,8 @@ const Platform3 = ({character, music, musicIsPlaying, toggleMusic}) => {
           } else if (e.keyCode === 65) {
             setX((x) => x -= 20);
           }
-
         }
         document.addEventListener('keydown', moveCharacter);
-    
         return () => {
           document.removeEventListener('keydown', moveCharacter);
         };
