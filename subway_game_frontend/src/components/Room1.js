@@ -73,7 +73,7 @@ const Room1 = ({ KelvinBridgeZombie, character, updateRoomOneStatus, music, sfx,
   const handleAttackClick = () => {
     setTimeout(() => {
       sfx.playerAttack.play()
-      const randomCharacterAttackPoints = Math.floor(Math.random() * 15) + 1; 
+      const randomCharacterAttackPoints = Math.floor(Math.random() * 10) + 1; 
       const newZombieHP = zombieHP - randomCharacterAttackPoints;
       setZombieHP(newZombieHP);
       setIsCharacterAttacked(true); 
@@ -97,7 +97,7 @@ const Room1 = ({ KelvinBridgeZombie, character, updateRoomOneStatus, music, sfx,
       if (isCharacterAttacked && zombieHP > 0) {
         setTimeout(() => {
           sfx.zombieAttack.play()
-          const randomZombieAttackPoints = Math.floor(Math.random() * 20) + 1; 
+          const randomZombieAttackPoints = Math.floor(Math.random() * 30) + 1; 
           const newCharacterHP = characterHP - randomZombieAttackPoints;
           setCharacterHP(newCharacterHP);
           setIsCharacterAttacked(false); 
