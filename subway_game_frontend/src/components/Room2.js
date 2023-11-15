@@ -131,7 +131,7 @@ const Room2 = ({ BarrowlandsBallroomZombie, character, updateRoomTwoStatus, musi
          <img src = "assets/KendokaV2.png" height= "750px" className={styles.playerSprite}/>
 
 
-          <img src = "assets/BBZombie.png" height= "550px" className= {styles.zombieSprite}/>
+          <img src = "assets/zombie2.gif" height= "550px" className= {styles.zombieSprite}/>
 
           <button className={styles.buttonAttack}  onClick={handleAttackClick}>ATTACK</button>
 

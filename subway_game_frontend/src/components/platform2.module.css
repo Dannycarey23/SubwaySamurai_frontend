@@ -23,7 +23,7 @@
 .bbZombie{
     position: fixed;
     bottom: 1.5rem;
-    right: 0;
+    right: 5rem;
     
 }
 
@@ -50,7 +50,7 @@
     right: 33%;
     padding: 1em;
     font-family: 'Pixelify Sans', sans-serif;
-    font-size: 30px;
+    font-size: 32px;
     line-height: 30px;
     width: 700px;
     background: rgb(255, 255, 255, 0.55);
