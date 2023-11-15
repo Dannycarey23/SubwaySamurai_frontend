@@ -9,11 +9,13 @@
     background-size: cover;
     height: 100vh;
     width: 100vw;
+    background-position:bottom;
+    
 } 
 
 .Sprite {
     position: absolute;
-    bottom: 1.5rem;
+    bottom: 0.5rem;
     left: 0;
     transition: 0.1s;
 }
@@ -43,7 +45,6 @@
 }  */
 
 .bubble {
-    opacity:0.75;
     position: fixed;
     bottom: 60%;
     right: 33%;
@@ -52,7 +53,7 @@
     font-size: 30px;
     line-height: 30px;
     width: 700px;
-    background: #fff;
+    background: rgb(255, 255, 255, 0.55);
     text-align: center;
     color: #000;
     border: thick dashed black;
@@ -73,4 +74,9 @@
         opacity: 1;
      } 
 }
-  
+ 
+.musicButtonDiv{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
