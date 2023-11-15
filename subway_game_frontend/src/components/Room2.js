@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './room2.module.css';
+import MusicButton from "./MusicButton";
+import {Howler} from 'howler';
 
 
-const Room2 = ({ BarrowlandsBallroomZombie, character, updateRoomTwoStatus, music, tigerBalm, painKillers, pint, dram }) => {
+const Room2 = ({ BarrowlandsBallroomZombie, character, updateRoomTwoStatus, music, musicIsPlaying, toggleMusic, sfx, tigerBalm, painKillers, pint, dram }) => {
   const [zombieHP, setZombieHP] = useState(BarrowlandsBallroomZombie.health);
 
   const [characterHP, setCharacterHP] = useState(character.health);
@@ -70,6 +72,7 @@ const Room2 = ({ BarrowlandsBallroomZombie, character, updateRoomTwoStatus, musi
 
   const handleAttackClick = () => {
     setTimeout(() => {
+      sfx.playerAttack.play()
       const randomCharacterAttackPoints = Math.floor(Math.random() * 15) + 1; 
       const newZombieHP = zombieHP - randomCharacterAttackPoints;
       setZombieHP(newZombieHP);
@@ -89,6 +92,7 @@ const Room2 = ({ BarrowlandsBallroomZombie, character, updateRoomTwoStatus, musi
     const handleZombieAttack = () => {
       if (isCharacterAttacked && zombieHP > 0) {
         setTimeout(() => {
+          sfx.zombieAttack.play()
           const randomZombieAttackPoints = Math.floor(Math.random() * 20) + 1; 
           const newCharacterHP = characterHP - randomZombieAttackPoints;
           setCharacterHP(newCharacterHP);
@@ -102,18 +106,27 @@ const Room2 = ({ BarrowlandsBallroomZombie, character, updateRoomTwoStatus, musi
 
   useEffect(() =>{
     if(zombieHP === 0 || zombieHP < 0){
+      Howler.stop();
       Navigate('/success');
       updateRoomTwoStatus(); //real url
     } else if (characterHP === 0 || characterHP < 0 ){
+      Howler.stop();
       Navigate('/failure') //real url
     }
   })
 
   useEffect(()=>{music.play()}, [])
 
+  const musicToggle = () => {
+    toggleMusic()
+  }
+
 
     return ( 
         <div className={styles.room2div}>
+                      <div className={styles.musicButtonDiv}>
+                <MusicButton musicIsPlaying={musicIsPlaying} musicToggle={musicToggle}/>
+            </div>
          <img src = "assets/KendokaV2.png" height= "800px" className={styles.playerSprite}/>
 
           <img src = "assets/BBZombie.png" height= "500px" className= {styles.zombieSprite}/>

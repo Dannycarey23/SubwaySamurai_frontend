@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { Howler } from 'howler';
 import { Navigate, redirect, useNavigate } from 'react-router-dom';
 import styles from './platform1.module.css'
+import MusicButton from "./MusicButton";
   
 const runners = [];
 
@@ -15,7 +16,7 @@ for (let i = 0; i < runnersCount; i++) {
   })
 }
 
-const Platform1 = ({character, music}) => {
+const Platform1 = ({character, musicIsPlaying, toggleMusic}) => {
     
     // const [name, setName] = useState(character.name)
     const [x, setX] = useState(0);
@@ -48,11 +49,16 @@ const Platform1 = ({character, music}) => {
             Navigate(newPage)
       }}, [x])
 
-
-
+      const musicToggle = () => {
+        toggleMusic()
+      }
+      
       return ( 
         <>
         <div className={styles.platform1div}>
+            <div className={styles.musicButtonDiv}>
+                <MusicButton musicIsPlaying={musicIsPlaying} musicToggle={musicToggle}/>
+            </div>
           <div className={styles.bubble} contenteditable> 
             <p>{character.name} enters the subway towards the city centre as it suddenly screams to a halt at Kelvin Bridge. Faint screams and growls echo around the subway chambers. Luckily you still have your trusty bamboo sword and armour. We all know weegies can fight so don’t take the zombies lightly.</p>
           </div>

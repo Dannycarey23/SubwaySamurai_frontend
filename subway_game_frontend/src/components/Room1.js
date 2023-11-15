@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './room1.module.css';
 import {Howler} from 'howler';
+import MusicButton from "./MusicButton";
 
-const Room1 = ({ KelvinBridgeZombie, character, updateRoomOneStatus, music, sfx, tigerBalm, painKillers, pint, dram }) => {
+const Room1 = ({ KelvinBridgeZombie, character, updateRoomOneStatus, music, sfx, musicIsPlaying, toggleMusic, tigerBalm, painKillers, pint, dram }) => {
   const [zombieHP, setZombieHP] = useState(KelvinBridgeZombie.health);
   const [characterHP, setCharacterHP] = useState(character.health);
   const [isCharacterAttacked, setIsCharacterAttacked] = useState(false); //good idea
@@ -108,15 +109,23 @@ const Room1 = ({ KelvinBridgeZombie, character, updateRoomOneStatus, music, sfx,
       Navigate('/success');
       updateRoomOneStatus();
     } else if (characterHP === 0 || characterHP < 0 ){
+      Howler.stop();
       Navigate('/failure')
     }
   })
 
   useEffect(()=>{music.play()}, [])
 
+  const musicToggle = () => {
+    toggleMusic()
+  }
+
 
     return ( 
         <div className={styles.room1div}>
+                      <div className={styles.musicButtonDiv}>
+                <MusicButton musicIsPlaying={musicIsPlaying} musicToggle={musicToggle}/>
+            </div>
           <img src = "assets/KendokaV2.png" height= "800px" className={styles.playerSprite}/>
 
           <img src = "assets/ZOMBIE.png" height= "600px" className={styles.zombieSprite}/>

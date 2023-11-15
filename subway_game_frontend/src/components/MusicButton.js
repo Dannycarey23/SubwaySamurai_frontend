@@ -1,16 +1,19 @@
 import React, {useState} from 'react';
+import { Howler } from 'howler';
 
-const MusicButton = ({music}) => {
-    const [musicIsPlaying, setMusicIsPlaying] = useState(false)
+const MusicButton = ({musicIsPlaying, musicToggle}) => {
+    // const [musicIsPlaying, setMusicIsPlaying] = useState(true)
     
     const playMusic = ()=>{
-            music.play()
-            setMusicIsPlaying(true);
+        Howler.mute(false)
+        // setMusicIsPlaying(true);
+        musicToggle()
     }
 
     const pauseMusic = ()=>{
-        music.pause()
-        setMusicIsPlaying(false);
+        Howler.mute(true)
+        // setMusicIsPlaying(false);
+        musicToggle()
     }
 
     return ( 

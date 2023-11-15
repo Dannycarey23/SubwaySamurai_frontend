@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './room3.module.css';
+import MusicButton from "./MusicButton";
+import {Howler} from 'howler';
 
-const Room3 = ({ LordProvost, character, updateRoomThreeStatus, music, tigerBalm, painKillers, pint, dram }) => {
+const Room3 = ({ LordProvost, character, updateRoomThreeStatus, music, musicIsPlaying, toggleMusic, sfx, tigerBalm, painKillers, pint, dram }) => {
   const [zombieHP, setZombieHP] = useState(LordProvost.health);
   const [characterHP, setCharacterHP] = useState(character.health);
   const [isCharacterAttacked, setIsCharacterAttacked] = useState(false); //good idea
@@ -68,6 +70,7 @@ const Room3 = ({ LordProvost, character, updateRoomThreeStatus, music, tigerBalm
 
   const handleAttackClick = () => {
     setTimeout(() => {
+      sfx.playerAttack.play()
       const randomCharacterAttackPoints = Math.floor(Math.random() * 15) + 1; 
       const newZombieHP = zombieHP - randomCharacterAttackPoints;
       setZombieHP(newZombieHP);
@@ -79,6 +82,7 @@ const Room3 = ({ LordProvost, character, updateRoomThreeStatus, music, tigerBalm
     const handleZombieAttack = () => {
       if (isCharacterAttacked && zombieHP > 0) {
         setTimeout(() => {
+          sfx.lord.play()
           const randomZombieAttackPoints = Math.floor(Math.random() * 15) + 1; 
           const newCharacterHP = characterHP - randomZombieAttackPoints;
           setCharacterHP(newCharacterHP);
@@ -95,14 +99,22 @@ const Room3 = ({ LordProvost, character, updateRoomThreeStatus, music, tigerBalm
       Navigate('/bigsuccess');
       updateRoomThreeStatus(); //real url
     } else if (characterHP === 0 || characterHP < 0 ){
+      Howler.stop();
       Navigate('/failure') //real url
     }
   })
 
   useEffect(()=>{music.play()}, [])
 
+  const musicToggle = () => {
+    toggleMusic()
+  }
+
     return ( 
         <div className={styles.room3div}>
+                      <div className={styles.musicButtonDiv}>
+                <MusicButton musicIsPlaying={musicIsPlaying} musicToggle={musicToggle}/>
+            </div>
         
         <img src = "assets/KendokaV2.png" height= "800px" className={styles.playerSprite}/>
 
