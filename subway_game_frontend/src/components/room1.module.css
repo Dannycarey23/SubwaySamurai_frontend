@@ -99,27 +99,48 @@
   }
     
 .playerHealth{
-        position: fixed;
-        bottom: 5rem;
-        left: 40rem;
-        padding: 15px 32px;
+    position: fixed;
+    bottom: 5rem;
+    left: 40rem;
+    padding: 15px 32px;
     }
     
 progress {
     width: 400px;
     height: 60px;
-    background-color: white;    
+    position: relative;
+    border: 2px solid black;
+    overflow: hidden; 
 }
-
-progress {
-    text-align: center;
-  }
-  progress:after {
-    content: attr(value)'HP';
-  }
-  
-    
-progress::-webkit-progress-value { background: red; }
+      
+      
+progress::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+       
+}
+      
+      
+progress::-webkit-progress-value {
+    background: red;
+    box-shadow: 1px 1px 4px 3px rgba(255, 0, 0, 0.8);
+}
+      
+      
+progress::after {
+    content: attr(value) ' HP';
+    font-size: 20px;
+    font-weight: 1000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+        
+}
+      
     
 .enemyHealth{
     position: absolute;
