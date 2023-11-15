@@ -59,8 +59,8 @@ const Room1 = ({ KelvinBridgeZombie, character, updateRoomOneStatus, music, sfx 
 
     return ( 
         <div className={styles.room1div}>
-          <img src = "assets/KendokaV2.png" height= "800px" className={styles.playerSprite}/>
-          <img src = "assets/ZOMBIE.png" height= "600px" className={styles.zombieSprite}/>
+          <img src = "assets/KendokaV2.png" height= "650px" className={styles.playerSprite}/>
+          <img src = "assets/ZOMBIE.png" height= "500px" className={styles.zombieSprite}/>
           <button className={styles.buttonAttack} onClick={handleAttackClick}>ATTACK</button>
           <progress className={styles.playerHealth} value={characterHP} max="100"></progress>
           <progress className={styles.enemyHealth} value={zombieHP} max="50"></progress>
