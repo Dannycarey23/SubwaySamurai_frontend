@@ -4,6 +4,20 @@ import styles from './room3.module.css';
 import MusicButton from "./MusicButton";
 import {Howler, Howl} from 'howler';
 
+let lordSounds = [
+  new Howl({
+    src: ['assets/lord.m4a'],
+    volume: 6}),
+  new Howl({
+    src: ['assets/lord2.m4a'],
+    volume: 6
+  }),
+  new Howl({
+    src: ['assets/lord3.m4a'],
+    volume: 6
+  })
+]
+
 const Room3 = ({ LordProvost, character, updateRoomThreeStatus, music, musicIsPlaying, toggleMusic, sfx, tigerBalm, painKillers, pint, dram }) => {
   const [zombieHP, setZombieHP] = useState(LordProvost.health);
   const [characterHP, setCharacterHP] = useState(character.health);
@@ -95,7 +109,10 @@ const Room3 = ({ LordProvost, character, updateRoomThreeStatus, music, musicIsPl
     const handleZombieAttack = () => {
       if (isCharacterAttacked && zombieHP > 0) {
         setTimeout(() => {
-          lordSounds[Math.floor(Math.random() * 2)].play();
+          lordSounds[0].play();
+          let sfxToBeMovedToTheBack = lordSounds[0]
+          lordSounds = lordSounds.slice(1)
+          lordSounds.push(sfxToBeMovedToTheBack)
           const randomZombieAttackPoints = Math.floor(Math.random() * 30) + 1; 
           const newCharacterHP = characterHP - randomZombieAttackPoints;
           setCharacterHP(newCharacterHP);
@@ -122,17 +139,6 @@ const Room3 = ({ LordProvost, character, updateRoomThreeStatus, music, musicIsPl
   const musicToggle = () => {
     toggleMusic()
   }
-
-  const lordSounds = [
-    new Howl({
-      src: ['assets/lord.m4a'],
-      volume: 6}),
-    
-    new Howl({
-      src: ['assets/lord2.m4a'],
-      volume: 6
-    })
-  ]
 
     return ( 
         <div className={styles.room3div}>
