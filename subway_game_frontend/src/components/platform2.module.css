@@ -36,18 +36,11 @@
     } 
 }
 
-/* .runner {
-    position: absolute;
-    bottom: 3.5rem;
-    animation: linear infinite;
-    animation-name: run;
-    animation-duration: 5s;
-}  */
 
 .bubble {
     position: fixed;
     bottom: 60%;
-    right: 33%;
+    right: 30%;
     padding: 1em;
     font-family: 'Pixelify Sans', sans-serif;
     font-size: 32px;
