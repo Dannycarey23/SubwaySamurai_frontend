@@ -1,6 +1,7 @@
 # Subway Samurai 
 
-developed by Danny Carey, Emma Cameron, Aiden Rooney, Oleksii Koliukh and Mark McGrory for our CodeClan Capstone Project
+Developed by Danny Carey, Emma Cameron, Aiden Rooney, Oleksii Koliukh and Mark McGrory for our CodeClan Capstone Project.
+<img width="1230" alt="image" src="https://github.com/Dannycarey23/SubwaySamurai_frontend/assets/139380629/bda4eea6-2740-43b1-9888-674221d02fde">
 
 # The Story
 
@@ -27,4 +28,4 @@ Thrive and Survive.
 
 # TechStack Used
 
-Spring, React.js, HTML, CSS, Postico, Insomnia, Howler and Git
+Spring, React.js, HTML, CSS, Postico, Insomnia, Howler and Git.
