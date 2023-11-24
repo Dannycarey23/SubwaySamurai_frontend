@@ -6,7 +6,7 @@ Developed by Danny Carey, Emma Cameron, Aiden Rooney, Oleksii Koliukh and Mark M
 # The Story
 
 
-In the story of “Subway Samurai,” players step into the shoes of a skilled kendo player who finds themself amidst the chaos of a zombie apocalypse in the streets of Glasgow. Armed with their trusty bamboo sword and unwavering determination, your player's only hope for survival lies in navigating the underground labyrinth of the Glasgow subway system. As they descend into the dark tunnels, they must contend with hordes of relentless zombies, their eerie moans echoing through the narrow passages.
+In the story of “Subway Samurai,” players step into the shoes of a skilled kendo fighter who finds themself amidst the chaos of a zombie apocalypse in the streets of Glasgow. Armed with their trusty bamboo sword and unwavering determination, your player's only hope for survival lies in navigating the underground labyrinth of the Glasgow subway system. As they descend into the dark tunnels, they must contend with hordes of relentless zombies, their eerie moans echoing through the narrow passages.
 
 
 
